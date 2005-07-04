@@ -17,31 +17,18 @@
 <p>GMediaServer is free software - it is licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> (GPL).</p>
 <p>This project is in an early stage of development. Many essential features are planned for the future. With your help, we will make a media server that can compete with the proprietary (and Windows-only) servers bundled with media device hardware.</p>
 <h1>News</h1>
-<p>2005-05-22: GMediaServer 0.3.0 released.</p>
+<p>2005-07-04: GMediaServer 0.4.0 released.</p>
 <div class="block">
-The home page has been redesigned.<br>
-Support multiple directories on the command line.<br>
-Update README: dependency wording, copyright and licensing wording regarding dependencies, overview wording, home page, and supported devices.<br>
-Added Contributors section to <code>AUTHORS</code> document.<br>
-Remove <code>intl</code> directory, should be there when we are using gettext externally.<br>
-Fix <code>--verbose</code> option - it didn't work at all (reported by Daniel Bachfeld).<br>
-Fix device name as displayed by the control point (was being displayed as "<code>(null)</code>").<br>
-Clean up logging (internally).<br>
-Support localization through GNU gettext.<br>
-Add initial swedish translation.<br>
-Use more gnulib modules, including stdbool and stdint.<br>
-Work around <code>id3lib</code> bug (it defines false and true).<br>
-Improve error messages and error reporting for UPnP actions.<br>
-Do not add <code>SessionID</code> to <code>ContentDirectory Browse</code> response.<br>
-Add support for <code>ContentDirectory Search</code> action.<br>
-Implement <code>BrowseMetadata</code> mode in <code>ContentDirectory Browse</code> action.<br>
-Add initial support for <code>ContentDirectory Search</code> action.<br>
+Added Linksys WMLS11B to Supported Devices.<br>
+Added Philips Streamium SL300i to Supported Devices.<br>
+Applied patch from Ivo Clarysse adding support for serving schema files through the UPnP internal web server. GMediaServer now works with Philips RC9800i (and probably others) thanks to this patch.<br>
+Added note about 1.3.7 firmware requirement for the MP101.<br>
 </div>
 <p>The complete history of GMediaServer can be seen <a href="news.html">here</a>.</p>
 <h1>Download</h1>
-<p>The latest version of GMediaServer is 0.3.0, which was released on 2005-05-22:</p>
+<p>The latest version of GMediaServer is 0.4.0, which was released on 2005-07-04:</p>
 <ul>
-<li><a href="http://savannah.nongnu.org/download/gmediaserver/GMediaServer-0.3.0.tar.gz">Source code tarball</a></li>
+<li><a href="http://savannah.nongnu.org/download/gmediaserver/GMediaServer-0.4.0.tar.gz">Source code tarball</a></li>
 </ul>
 <p>These files, as well as older versions, are available in the <a href="http://savannah.nongnu.org/download/gmediaserver/">GMediaServer file area</a>.</p>
 <h1>Other Links</h1>
@@ -107,12 +94,23 @@ Add initial support for <code>ContentDirectory Search</code> action.<br>
 <h1>Supported Devices</h1>
 <p>The following media devices have been tested and are confirmed to work with GMediaServer:</p>
 <ul>
-<li><p>Netgear MP101</p>
+<li><p>Netgear Wireless Digital Music Player (MP101)</p>
 <p>URL: <a href="http://www.netgear.com/products/details/MP101.php">http://www.netgear.com/products/details/MP101.php</a></p>
+<p>Notes: You probably need to upgrade the firmware to 1.3.7 or later to use GMediaServer with the MP101.</p>
+<li><p>Linksys Wireless-B Music System (WMLS11B)</p>
+<p>URL: <a href="http://www.linksys.com/products/product.asp?grid=33&scid=38&prid=631">http://www.linksys.com/products/product.asp?grid=33&scid=38&prid=631</a></p>
+<li><p>Linksys Wireless-B Media Link for Music (WML11B)</p>
+<p>URL: <a href="http://www.linksys.com/products/product.asp?grid=33&prid=632">http://www.linksys.com/products/product.asp?grid=33&prid=632</a></p>
+<p>Notes: It may be necessary to manually select a new song to play when the current song  has finished playing. This problem has not been solved yet.</p>
+<li><p>Philips Streamium SL300i</p>
+<p>URL: <a href="http://www.streamium.com/products/sl300i/">http://www.streamium.com/products/sl300i/</a></p>
+<p>Notes: Confirmed to work with GMediaServer with firmware 1.5.2.</p>
+<li><p>Philips Streamium RC9800i</p>
+<p>URL: <a href="http://www.homecontrol.philips.com/">http://www.homecontrol.philips.com/</a></p>
 </ul>
 <p>The following devices may work, but have not been tested:</p>
 <ul>
-<li><p>Philips Streamium 300i, 400i</p>
+<li><p>Philips Streamium 400i</p>
 <p>URL: <a href="http://www.streamium.com/">http://www.streamium.com/</a></p>
 <li><p>SMC EZ-Stream</p>
 <li><p>Terratec Noxon</p>
@@ -144,7 +142,7 @@ Add initial support for <code>ContentDirectory Search</code> action.<br>
 <p>As GMediaServer is in an early stage of development, many essential features are unimplemented.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-05-22.
+This document was generated on 2005-07-04.
 </div>
 </body>
 </html>
