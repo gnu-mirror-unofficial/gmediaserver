@@ -1,38 +1,56 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>gmediaserver home</title>
+<meta http-equiv="Content-Type" content="text/html; charset="iso-8859-1">
+<title>GMediaServer home</title>
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
 <h1>GMediaServer - Introduction</h1>
 <p>GMediaServer is a UPnP music media server. It implements the server component that provides UPnP media devices with information on available audio files. GMediaServer uses the built-in http server of libupnp to stream the audio files to clients.</p>
-<p>The following media devices have been tested and are confirmed to work with GMediaServer:</p>
-<div class="block">
-<a href="http://www.netgear.com/products/details/MP101.php">Netgear MP101</a><br>
-</div>
+<p>A number of media devices have been tested and are confirmed to work with GMediaServer. Among then are Netgear MP101, Linksys WMLS11B and WML11B, Philips Streamium SL300i and RC9800i, and Omnify DMS1. See below for a full list.</p>
 <p>Other UPnP media devices (including software based) may work as well - see below for a more detailed list of supported devices. For a quick start, see the Usage and Known Bugs sections below.</p>
 <p>GMediaServer is written in C by <a href="mailto:oskar@osk.mine.nu">Oskar Liljeblad</a>. It should compile and run on any modern POSIX compatible system such as Linux. GMediaServer is a console based application which is usually run in the background.</p>
 <p>GMediaServer is free software - it is licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> (GPL).</p>
 <p>This project is in an early stage of development. Many essential features are planned for the future. With your help, we will make a media server that can compete with the proprietary (and Windows-only) servers bundled with media device hardware.</p>
 <h1>News</h1>
+<p>2005-08-09: GMediaServer 0.5.0 released.</p>
+<div class="block">
+Improve UPnP compliance by assigning the root entry a non-empty name (required by Intel Device Validator, although this name usually isn't seen on the control point).<br>
+Improve UPnP complience by supporting <code>Filter</code> for Browse and Search.<br>
+Improve portability by using <code>nstrftime</code> from Gnulib instead of <code>strftime</code>.<br>
+Add the concept of profiles, specified with <code>--profile</code>.<br>
+Add profiles <code>mp101</code> (Netgear MP101), <code>dms1</code> (Omnify DMS1), and <code>generic</code>.<br>
+Add Omnifi DMS1 to list of supported devices (reported by James E. Flemer).<br>
+Return all results when RequestedCount is 0 for ContentDirectory Browse action (reported by Rémi Turboult).<br>
+Write correct process id to file when using <code>--background</code> (patch submitted by Jochen Friedrich).<br>
+Improve portability by only assigning <code>struct sigaction.sa_restorer</code> when available (patch submitted by Jochen Friedrich).<br>
+Improve portability by adding <code>tempfailure.h</code> (defining <code>TEMP_FAILURE_RETRY</code> when not available).<br>
+Improve portability by including <code>sys/socket.h</code> in <code>interfaces.c</code> (patch submitted by James E. Flemer).<br>
+Add manual page (partly from Jochen Friedrich).<br>
+Add <code>--expire-time</code> option to control UPnP device advertisement expire time necessary for Omnifi DMS1 (from James E. Flemer).<br>
+Add djmount to links section (from Rémi Turboult).<br>
+Updated FSF address in copyright and license messages.<br>
+Fix compile bug: Only include id3.h when id3lib is available (patch submitted by James E. Flemer).<br>
+Added copyright header to various files missing it.<br>
+Fix UPnP compliance bug: Send &lt;upnp:class&gt; in search and browse results, not &lt;class&gt; (patch submitted by James E. Flemer).<br>
+Improve UPnP compliance by putting slash at end of <code>xmlns</code> attribute of the <code>DIDL-Lite</code> tag (patch submitted by James E. Flemer).<br>
+Improve UPnP compliance by adding <code>size</code> attribute to <code>res</code> tag in browse and search results (patch submitted by James E. Flemer).<br>
+Add Gnulib module <code>progname</code> and get rid of <code>program_invocation_name</code> to improve portability (from James E. Flemer).<br>
+Add Gnulib module <code>sig2str</code> and improve error messages regarding received signals.<br>
+Add the concept of file types, specified with <code>--file-types</code>.<br>
+Added support for other file formats: iTunes AAC, RIFF WAVE (patch from James E. Flemer).<br>
+Update README regarding supported devices.<br>
+</div>
 <p>2005-07-05: Web site updated.</p>
 <div class="block">
 Fixed download link for package.<br>
 </div>
-<p>2005-07-04: GMediaServer 0.4.0 released.</p>
-<div class="block">
-Added Linksys WMLS11B to Supported Devices.<br>
-Added Philips Streamium SL300i to Supported Devices.<br>
-Applied patch from Ivo Clarysse adding support for serving schema files through the UPnP internal web server. GMediaServer now works with Philips RC9800i (and probably others) thanks to this patch.<br>
-Added note about 1.3.7 firmware requirement for the MP101.<br>
-</div>
 <p>The complete history of GMediaServer can be seen <a href="news.html">here</a>.</p>
 <h1>Download</h1>
-<p>The latest version of GMediaServer is 0.4.0, which was released on 2005-07-04:</p>
+<p>The latest version of GMediaServer is 0.5.0, which was released on 2005-08-09:</p>
 <ul>
-<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.4.0.tar.gz">Source code tarball</a></li>
+<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.5.0.tar.gz">Source code tarball</a></li>
 </ul>
 <p>These files, as well as older versions, are available in the <a href="http://savannah.nongnu.org/download/gmediaserver/">GMediaServer file area</a>.</p>
 <h1>Other Links</h1>
@@ -42,11 +60,15 @@ Added note about 1.3.7 firmware requirement for the MP101.<br>
 <li><a href="http://freshmeat.net/projects/gmediaserver/">Freshmeat project record for GMediaServer</a></li>
 <li><a href="http://www.linuxlinks.com/Software/System/Servers/Multimedia/">LinuxLinks category <i>Multimedia Servers</i></a></li>
 </ul>
+<p>The following UPnP media server clients work with GMediaServer:</p>
+<ul>
+<li><a href="http://djmount.sourceforge.net/">djmount</a></li>
+</ul>
 <h1>Copyright and License</h1>
 <p>GMediaServer is copyright (C) 2005 Oskar Liljeblad.</p>
 <p>This program is free software; you can redistribute it and/or modify it under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> as published by the <a href="http://www.fsf.org/">Free Software Foundation</a>; either version 2 of the License, or (at your option) any later version.</p>
 <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> for more details.</p>
-<p>You should have received a copy of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> along with this program; if not, write to the <a href="http://www.fsf.org/">Free Software Foundation</a>, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</p>
+<p>You should have received a copy of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> along with this program; if not, write to the <a href="http://www.fsf.org/">Free Software Foundation</a>, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.</p>
 <p>Note that GMediaServer links with libupnp, which is licensed under the terms of a modified BSD license (i.e. the original BSD license without the advertising clause). This license is compatible with the GNU GPL. GMediaServer optionally links with id3lib, which is licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>.</p>
 <p>The source code of this project may contain files from other projects, and files generated by other projects, including:</p>
 <ul>
@@ -94,28 +116,32 @@ Added note about 1.3.7 firmware requirement for the MP101.<br>
 ./gmediaserver -ieth1 -v4 /audio
 </pre>
 </div>
-<p>At the moment, there is no manual page for GMediaServer.</p>
+<p>Check out the <code>--profile</code> option, which allows settings for certain devices to be automaticly enabled. See the manual page for  more details:</p>
+<div class="block">
+<pre>
+man ./gmediaserver.1
+</pre>
+</div>
 <h1>Supported Devices</h1>
 <p>The following media devices have been tested and are confirmed to work with GMediaServer:</p>
 <ul>
 <li><p>Netgear Wireless Digital Music Player (MP101)</p>
-<p>URL: <a href="http://www.netgear.com/products/details/MP101.php">http://www.netgear.com/products/details/MP101.php</a></p>
-<p>Notes: You probably need to upgrade the firmware to 1.3.7 or later to use GMediaServer with the MP101.</p>
+<p><i>Profile:</i> <code>mp101</code><br> <i>URL:</i> <a href="http://www.netgear.com/products/details/MP101.php">http://www.netgear.com/products/details/MP101.php</a><br> <i>Notes:</i> You probably need to upgrade the firmware to 1.3.7 or later to use GMediaServer with the MP101.</p>
 <li><p>Linksys Wireless-B Music System (WMLS11B)</p>
-<p>URL: <a href="http://www.linksys.com/products/product.asp?grid=33&scid=38&prid=631">http://www.linksys.com/products/product.asp?grid=33&scid=38&prid=631</a></p>
+<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.linksys.com/products/product.asp?grid=33&scid=38&prid=631">http://www.linksys.com/products/product.asp?grid=33&scid=38&prid=631</a></p>
 <li><p>Linksys Wireless-B Media Link for Music (WML11B)</p>
-<p>URL: <a href="http://www.linksys.com/products/product.asp?grid=33&prid=632">http://www.linksys.com/products/product.asp?grid=33&prid=632</a></p>
-<p>Notes: It may be necessary to manually select a new song to play when the current song  has finished playing. This problem has not been solved yet.</p>
+<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.linksys.com/products/product.asp?grid=33&prid=632">http://www.linksys.com/products/product.asp?grid=33&prid=632</a><br> <i>Notes:</i> It may be necessary to manually select a new song to play when the current song  has finished playing. This problem has not been solved yet.</p>
 <li><p>Philips Streamium SL300i</p>
-<p>URL: <a href="http://www.streamium.com/products/sl300i/">http://www.streamium.com/products/sl300i/</a></p>
-<p>Notes: Confirmed to work with GMediaServer with firmware 1.5.2.</p>
+<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.streamium.com/products/sl300i/">http://www.streamium.com/products/sl300i/</a><br> <i>Notes:</i> Confirmed to work with GMediaServer with firmware 1.5.2.</p>
 <li><p>Philips Streamium RC9800i</p>
-<p>URL: <a href="http://www.homecontrol.philips.com/">http://www.homecontrol.philips.com/</a></p>
+<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.homecontrol.philips.com/">http://www.homecontrol.philips.com/</a></p>
+<li><p>Omnifi DMS1</p>
+<p><i>Profile:</i> <code>dms1</code><br> <i>URL:</i> <a href="http://omnifimedia.com/products/omnifi_details.jsp?productId=12542">http://omnifimedia.com/products/omnifi_details.jsp?productId=12542</a><br> <i>Notes:</i> Requires <code>--expire-time=1801</code> (or greater than 1801).</p>
 </ul>
 <p>The following devices may work, but have not been tested:</p>
 <ul>
 <li><p>Philips Streamium 400i</p>
-<p>URL: <a href="http://www.streamium.com/">http://www.streamium.com/</a></p>
+<p><i>URL:</i> <a href="http://www.streamium.com/">http://www.streamium.com/</a></p>
 <li><p>SMC EZ-Stream</p>
 <li><p>Terratec Noxon</p>
 <li><p>Roku</p>
@@ -146,7 +172,7 @@ Added note about 1.3.7 firmware requirement for the MP101.<br>
 <p>As GMediaServer is in an early stage of development, many essential features are unimplemented.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-07-05.
+This document was generated on 2005-08-09.
 </div>
 </body>
 </html>

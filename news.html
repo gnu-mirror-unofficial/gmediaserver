@@ -7,6 +7,34 @@
 </head>
 <body>
 <h1>GMediaServer - History</h1>
+<p>2005-08-09: GMediaServer 0.5.0 released.</p>
+<div class="block">
+Improve UPnP compliance by assigning the root entry a non-empty name (required by Intel Device Validator, although this name usually isn't seen on the control point).<br>
+Improve UPnP complience by supporting <code>Filter</code> for Browse and Search.<br>
+Improve portability by using <code>nstrftime</code> from Gnulib instead of <code>strftime</code>.<br>
+Add the concept of profiles, specified with <code>--profile</code>.<br>
+Add profiles <code>mp101</code> (Netgear MP101), <code>dms1</code> (Omnify DMS1), and <code>generic</code>.<br>
+Add Omnifi DMS1 to list of supported devices (reported by James E. Flemer).<br>
+Return all results when RequestedCount is 0 for ContentDirectory Browse action (reported by Rémi Turboult).<br>
+Write correct process id to file when using <code>--background</code> (patch submitted by Jochen Friedrich).<br>
+Improve portability by only assigning <code>struct sigaction.sa_restorer</code> when available (patch submitted by Jochen Friedrich).<br>
+Improve portability by adding <code>tempfailure.h</code> (defining <code>TEMP_FAILURE_RETRY</code> when not available).<br>
+Improve portability by including <code>sys/socket.h</code> in <code>interfaces.c</code> (patch submitted by James E. Flemer).<br>
+Add manual page (partly from Jochen Friedrich).<br>
+Add <code>--expire-time</code> option to control UPnP device advertisement expire time necessary for Omnifi DMS1 (from James E. Flemer).<br>
+Add djmount to links section (from Rémi Turboult).<br>
+Updated FSF address in copyright and license messages.<br>
+Fix compile bug: Only include id3.h when id3lib is available (patch submitted by James E. Flemer).<br>
+Added copyright header to various files missing it.<br>
+Fix UPnP compliance bug: Send &lt;upnp:class&gt; in search and browse results, not &lt;class&gt; (patch submitted by James E. Flemer).<br>
+Improve UPnP compliance by putting slash at end of <code>xmlns</code> attribute of the <code>DIDL-Lite</code> tag (patch submitted by James E. Flemer).<br>
+Improve UPnP compliance by adding <code>size</code> attribute to <code>res</code> tag in browse and search results (patch submitted by James E. Flemer).<br>
+Add Gnulib module <code>progname</code> and get rid of <code>program_invocation_name</code> to improve portability (from James E. Flemer).<br>
+Add Gnulib module <code>sig2str</code> and improve error messages regarding received signals.<br>
+Add the concept of file types, specified with <code>--file-types</code>.<br>
+Added support for other file formats: iTunes AAC, RIFF WAVE (patch from James E. Flemer).<br>
+Update README regarding supported devices.<br>
+</div>
 <p>2005-07-05: Web site updated.</p>
 <div class="block">
 Fixed download link for package.<br>
@@ -51,7 +79,7 @@ First release.<br>
 <p>Click <a href="index.html">here</a> to return to the main page.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-07-05.
+This document was generated on 2005-08-09.
 </div>
 </body>
 </html>
