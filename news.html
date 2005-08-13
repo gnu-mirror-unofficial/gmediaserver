@@ -7,6 +7,20 @@
 </head>
 <body>
 <h1>GMediaServer - History</h1>
+<p>2005-08-13: GMediaServer 0.6.0 released.</p>
+<div class="block">
+Changed type sent by <code>ConnectionManager::ProtocolInfo</code> to <code>http-get:*:*:*</code>.<br>
+Add support for HTTP URLs found in playlists and specified on the command line. Type is <code>http</code>. This is disabled by default - enable it with <code>--file-type=http,[..]</code>.<br>
+Add support for PLS, Simple, and Extended M3U playlists (from James E. Flemer).<br>
+Add <code>References</code> and <code>Trademarks</code> sections to README and website. Mention that UPnP&trade; is a trademark, and that NETGEAR<sup><small>&reg;</small></sup>, Linksys<sup><small>&reg;</small></sup>, Philips are registered trademarks.<br>
+Improved some error messages.<br>
+Escape non-printable characters in messages printed on screen.<br>
+Add Gnulib module <code>quote</code> for better error messages.<br>
+Add Gnulib module <code>getnline</code> for reading files for playlist support.<br>
+Enable localization by actually setting locale and text domain on startup (doh!).<br>
+Added <code>MANIFEST.sources</code> file.<br>
+Clean up some code, resulting in a new module <code>strutil</code>.<br>
+</div>
 <p>2005-08-09: GMediaServer 0.5.0 released.</p>
 <div class="block">
 Improve UPnP compliance by assigning the root entry a non-empty name (required by Intel Device Validator, although this name usually isn't seen on the control point).<br>
@@ -79,7 +93,7 @@ First release.<br>
 <p>Click <a href="index.html">here</a> to return to the main page.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-08-09.
+This document was generated on 2005-08-13.
 </div>
 </body>
 </html>

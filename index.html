@@ -1,56 +1,38 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset="iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>GMediaServer home</title>
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
 <h1>GMediaServer - Introduction</h1>
-<p>GMediaServer is a UPnP music media server. It implements the server component that provides UPnP media devices with information on available audio files. GMediaServer uses the built-in http server of libupnp to stream the audio files to clients.</p>
-<p>A number of media devices have been tested and are confirmed to work with GMediaServer. Among then are Netgear MP101, Linksys WMLS11B and WML11B, Philips Streamium SL300i and RC9800i, and Omnify DMS1. See below for a full list.</p>
+<p>GMediaServer is a UPnP&trade; music media server. It implements the server component that provides UPnP media devices with information on available audio files. GMediaServer uses the built-in http server of libupnp to stream the audio files to clients.</p>
+<p>A number of media devices have been tested and are confirmed to work with GMediaServer. Among then are NETGEAR<sup><small>&reg;</small></sup> MP101, Linksys<sup><small>&reg;</small></sup> WMLS11B and WML11B, Philips Streamium SL300i and RC9800i, and Omnify DMS1. See below for a full list.</p>
 <p>Other UPnP media devices (including software based) may work as well - see below for a more detailed list of supported devices. For a quick start, see the Usage and Known Bugs sections below.</p>
 <p>GMediaServer is written in C by <a href="mailto:oskar@osk.mine.nu">Oskar Liljeblad</a>. It should compile and run on any modern POSIX compatible system such as Linux. GMediaServer is a console based application which is usually run in the background.</p>
 <p>GMediaServer is free software - it is licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> (GPL).</p>
 <p>This project is in an early stage of development. Many essential features are planned for the future. With your help, we will make a media server that can compete with the proprietary (and Windows-only) servers bundled with media device hardware.</p>
 <h1>News</h1>
-<p>2005-08-09: GMediaServer 0.5.0 released.</p>
+<p>2005-08-13: GMediaServer 0.6.0 released.</p>
 <div class="block">
-Improve UPnP compliance by assigning the root entry a non-empty name (required by Intel Device Validator, although this name usually isn't seen on the control point).<br>
-Improve UPnP complience by supporting <code>Filter</code> for Browse and Search.<br>
-Improve portability by using <code>nstrftime</code> from Gnulib instead of <code>strftime</code>.<br>
-Add the concept of profiles, specified with <code>--profile</code>.<br>
-Add profiles <code>mp101</code> (Netgear MP101), <code>dms1</code> (Omnify DMS1), and <code>generic</code>.<br>
-Add Omnifi DMS1 to list of supported devices (reported by James E. Flemer).<br>
-Return all results when RequestedCount is 0 for ContentDirectory Browse action (reported by Rémi Turboult).<br>
-Write correct process id to file when using <code>--background</code> (patch submitted by Jochen Friedrich).<br>
-Improve portability by only assigning <code>struct sigaction.sa_restorer</code> when available (patch submitted by Jochen Friedrich).<br>
-Improve portability by adding <code>tempfailure.h</code> (defining <code>TEMP_FAILURE_RETRY</code> when not available).<br>
-Improve portability by including <code>sys/socket.h</code> in <code>interfaces.c</code> (patch submitted by James E. Flemer).<br>
-Add manual page (partly from Jochen Friedrich).<br>
-Add <code>--expire-time</code> option to control UPnP device advertisement expire time necessary for Omnifi DMS1 (from James E. Flemer).<br>
-Add djmount to links section (from Rémi Turboult).<br>
-Updated FSF address in copyright and license messages.<br>
-Fix compile bug: Only include id3.h when id3lib is available (patch submitted by James E. Flemer).<br>
-Added copyright header to various files missing it.<br>
-Fix UPnP compliance bug: Send &lt;upnp:class&gt; in search and browse results, not &lt;class&gt; (patch submitted by James E. Flemer).<br>
-Improve UPnP compliance by putting slash at end of <code>xmlns</code> attribute of the <code>DIDL-Lite</code> tag (patch submitted by James E. Flemer).<br>
-Improve UPnP compliance by adding <code>size</code> attribute to <code>res</code> tag in browse and search results (patch submitted by James E. Flemer).<br>
-Add Gnulib module <code>progname</code> and get rid of <code>program_invocation_name</code> to improve portability (from James E. Flemer).<br>
-Add Gnulib module <code>sig2str</code> and improve error messages regarding received signals.<br>
-Add the concept of file types, specified with <code>--file-types</code>.<br>
-Added support for other file formats: iTunes AAC, RIFF WAVE (patch from James E. Flemer).<br>
-Update README regarding supported devices.<br>
-</div>
-<p>2005-07-05: Web site updated.</p>
-<div class="block">
-Fixed download link for package.<br>
+Changed type sent by <code>ConnectionManager::ProtocolInfo</code> to <code>http-get:*:*:*</code>.<br>
+Add support for HTTP URLs found in playlists and specified on the command line. Type is <code>http</code>. This is disabled by default - enable it with <code>--file-type=http,[..]</code>.<br>
+Add support for PLS, Simple, and Extended M3U playlists (from James E. Flemer).<br>
+Add <code>References</code> and <code>Trademarks</code> sections to README and website. Mention that UPnP&trade; is a trademark, and that NETGEAR<sup><small>&reg;</small></sup>, Linksys<sup><small>&reg;</small></sup>, Philips are registered trademarks.<br>
+Improved some error messages.<br>
+Escape non-printable characters in messages printed on screen.<br>
+Add Gnulib module <code>quote</code> for better error messages.<br>
+Add Gnulib module <code>getnline</code> for reading files for playlist support.<br>
+Enable localization by actually setting locale and text domain on startup (doh!).<br>
+Added <code>MANIFEST.sources</code> file.<br>
+Clean up some code, resulting in a new module <code>strutil</code>.<br>
 </div>
 <p>The complete history of GMediaServer can be seen <a href="news.html">here</a>.</p>
 <h1>Download</h1>
-<p>The latest version of GMediaServer is 0.5.0, which was released on 2005-08-09:</p>
+<p>The latest version of GMediaServer is 0.6.0, which was released on 2005-08-13:</p>
 <ul>
-<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.5.0.tar.gz">Source code tarball</a></li>
+<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.6.0.tar.gz">Source code tarball</a></li>
 </ul>
 <p>These files, as well as older versions, are available in the <a href="http://savannah.nongnu.org/download/gmediaserver/">GMediaServer file area</a>.</p>
 <h1>Other Links</h1>
@@ -125,12 +107,12 @@ man ./gmediaserver.1
 <h1>Supported Devices</h1>
 <p>The following media devices have been tested and are confirmed to work with GMediaServer:</p>
 <ul>
-<li><p>Netgear Wireless Digital Music Player (MP101)</p>
+<li><p>NETGEAR<sup><small>&reg;</small></sup> Wireless Digital Music Player (MP101)</p>
 <p><i>Profile:</i> <code>mp101</code><br> <i>URL:</i> <a href="http://www.netgear.com/products/details/MP101.php">http://www.netgear.com/products/details/MP101.php</a><br> <i>Notes:</i> You probably need to upgrade the firmware to 1.3.7 or later to use GMediaServer with the MP101.</p>
-<li><p>Linksys Wireless-B Music System (WMLS11B)</p>
-<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.linksys.com/products/product.asp?grid=33&scid=38&prid=631">http://www.linksys.com/products/product.asp?grid=33&scid=38&prid=631</a></p>
-<li><p>Linksys Wireless-B Media Link for Music (WML11B)</p>
-<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.linksys.com/products/product.asp?grid=33&prid=632">http://www.linksys.com/products/product.asp?grid=33&prid=632</a><br> <i>Notes:</i> It may be necessary to manually select a new song to play when the current song  has finished playing. This problem has not been solved yet.</p>
+<li><p>Linksys<sup><small>&reg;</small></sup> Wireless-B Music System (WMLS11B)</p>
+<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.linksys.com/products/product.asp?grid=33&amp;scid=38&amp;prid=631">http://www.linksys.com/products/product.asp?grid=33&amp;scid=38&amp;prid=631</a></p>
+<li><p>Linksys<sup><small>&reg;</small></sup> Wireless-B Media Link for Music (WML11B)</p>
+<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.linksys.com/products/product.asp?grid=33&amp;prid=632">http://www.linksys.com/products/product.asp?grid=33&amp;prid=632</a><br> <i>Notes:</i> It may be necessary to manually select a new song to play when the current song  has finished playing. This problem has not been solved yet.</p>
 <li><p>Philips Streamium SL300i</p>
 <p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.streamium.com/products/sl300i/">http://www.streamium.com/products/sl300i/</a><br> <i>Notes:</i> Confirmed to work with GMediaServer with firmware 1.5.2.</p>
 <li><p>Philips Streamium RC9800i</p>
@@ -152,6 +134,12 @@ man ./gmediaserver.1
 <li><p>LinkSys WMLS11B</p>
 <li><p>Sony RoomLink</p>
 </ul>
+<h1>References</h1>
+<p>Note that this list of references is not complete.</p>
+<ul>
+<li><p><a href="http://forums.winamp.com/showthread.php?threadid=65772">The Unofficial M3U and PLS Specification</a></p>
+<li><p><a href="http://www.upnp.org/standardizeddcps/default.asp">UPnP(TM) Standards</a></p>
+</ul>
 <h1>Homepage</h1>
 <p>Web site and file area for GMediaServer is hosted on <a href="http://savannah.nongnu.org/">Savannah</a>:</p>
 <div class="block">
@@ -166,13 +154,19 @@ man ./gmediaserver.1
 <p>Please send bug reports, suggestions, ideas or comments in general to me.</p>
 <p>If you would like to get involved with this project, please don't hesitate to contact me! All contributions are welcomed.</p>
 <h1>Known bugs and limitations</h1>
-<p>Unfortunately the Netgear MP101 is quite buggy, even with the latest firmware (1.3.7 as of writing this). Numerous forum posts on the internet can confirm this. For me, it seems to hang randomly when browsing or when just about to play a song. I have yet to discover what is causing this.</p>
+<p>There are some compilation warnings due to bugs in GNU flex and libupnp. They can safely be ignored.</p>
+<p>Unfortunately the NETGEAR MP101 is quite buggy, even with the latest firmware (1.3.7 as of writing this). Numerous forum posts on the internet can confirm this. For me, it seems to hang randomly when browsing or when just about to play a song. I have yet to discover what is causing this.</p>
 <p>If you need to listen on more than one interface, you will have to start multiple instances of the media server.</p>
 <p>GMediaServer keeps information on all audio files in memory. If your audio collection is huge, this might be a problem.</p>
 <p>As GMediaServer is in an early stage of development, many essential features are unimplemented.</p>
+<h1>Trademarks</h1>
+<p>NETGEAR is a registered trademark of NETGEAR, Inc.</p>
+<p>"Linksys" is a registered trademark of The Linksys Group, Inc.</p>
+<p>"Philips" is a registered trademark of Koninklijke Philips Electronics N.V.</p>
+<p>UPnP&trade; is a trademark of the UPnP&trade; Implementers Corporation.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-08-09.
+This document was generated on 2005-08-13.
 </div>
 </body>
 </html>
