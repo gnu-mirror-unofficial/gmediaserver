@@ -14,27 +14,34 @@
 <p>GMediaServer is free software - it is licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> (GPL).</p>
 <p>This project is in an early stage of development. Many essential features are planned for the future. With your help, we will make a media server that can compete with the proprietary (and Windows-only) servers bundled with media device hardware.</p>
 <h1>News</h1>
-<p>2005-08-13: GMediaServer 0.6.0 released.</p>
+<p>2005-08-29: GMediaServer 0.7.0 released.</p>
 <div class="block">
-Changed type sent by <code>ConnectionManager::ProtocolInfo</code> to <code>http-get:*:*:*</code>.<br>
-Add support for HTTP URLs found in playlists and specified on the command line. Type is <code>http</code>. This is disabled by default - enable it with <code>--file-type=http,[..]</code>.<br>
-Add support for PLS, Simple, and Extended M3U playlists (from James E. Flemer).<br>
-Add <code>References</code> and <code>Trademarks</code> sections to README and website. Mention that UPnP&trade; is a trademark, and that NETGEAR<sup><small>&reg;</small></sup>, Linksys<sup><small>&reg;</small></sup>, Philips are registered trademarks.<br>
-Improved some error messages.<br>
-Escape non-printable characters in messages printed on screen.<br>
-Add Gnulib module <code>quote</code> for better error messages.<br>
-Add Gnulib module <code>getnline</code> for reading files for playlist support.<br>
-Enable localization by actually setting locale and text domain on startup (doh!).<br>
-Added <code>MANIFEST.sources</code> file.<br>
-Clean up some code, resulting in a new module <code>strutil</code>.<br>
+Add transparent support for fetching audio data from remote HTTP and ICY servers (Icecast, Shoutcast etc). This means you can listen to web radio on the media player - GMediaServer acts as a kind of proxy between the remote server and the media player. Get rid of the <code>http</code> file type since this is automaticly supported now.<br>
+Add support for character set conversion using <code>--in-charset</code> and <code>--device-charset</code> options (suggested by Rémi Turboult).<br>
+Add Gnulib modules <code>getline</code>, <code>c-ctype</code> for web client support.<br>
+Add modules <code>hmap</code> and <code>comparison</code> for web client support.<br>
+Fix bug in code generating response for <code>Browse</code> and <code>Search</code> actions - <code>&lt;item&gt;</code> would not be matched with <code>&lt;/item&gt;</code>, same for <code>&lt;container&gt;</code> (reported by Jean-François Remy, James E. Flemer, Ivo Clarysse and Rémi Turboult).<br>
+Fix compilation problem on FreeBSD - <code>sys/socket.h</code> needed to be included before some other header files (patch from James E. Flemer).<br>
+Fix compilation problems on FreeBSD by including certain header files (patch from James E. Flemer).<br>
+Changed profile settings for Omnifi DMS1 (<code>dms1</code>) (patch from James E. Flemer).<br>
+Fix potential segmentation fault in code handling playlists (patch from James E. Flemer).<br>
+Add info about FreeBSD port to web site (from James E. Flemer).<br>
+Parse PLS playlists case insensitively (except header) (patch from James E. Flemer).<br>
+Abort reading of playlist after 16 incorrect lines/files.<br>
+Allow case insensitive <code>http://</code> URLs in playlists (patch from James E. Flemer).<br>
+Added some more References to documentation.<br>
 </div>
 <p>The complete history of GMediaServer can be seen <a href="news.html">here</a>.</p>
 <h1>Download</h1>
-<p>The latest version of GMediaServer is 0.6.0, which was released on 2005-08-13:</p>
+<p>The latest version of GMediaServer is 0.7.0, which was released on 2005-08-29:</p>
 <ul>
-<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.6.0.tar.gz">Source code tarball</a></li>
+<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.7.0.tar.gz">Source code tarball</a></li>
 </ul>
 <p>These files, as well as older versions, are available in the <a href="http://savannah.nongnu.org/download/gmediaserver/">GMediaServer file area</a>.</p>
+<p>A FreeBSD "port" is also available of GMediaServer. You can find the necessary files to build a package here:</p>
+<div class="block">
+<a href="http://www.uvm.edu/~jflemer/omnifi/gmediaserver-port.tar.gz">http://www.uvm.edu/~jflemer/omnifi/gmediaserver-port.tar.gz</a><br>
+</div>
 <h1>Other Links</h1>
 <p>GMediaServer is mentioned on the following pages:</p>
 <ul>
@@ -137,8 +144,11 @@ man ./gmediaserver.1
 <h1>References</h1>
 <p>Note that this list of references is not complete.</p>
 <ul>
-<li><p><a href="http://forums.winamp.com/showthread.php?threadid=65772">The Unofficial M3U and PLS Specification</a></p>
 <li><p><a href="http://www.upnp.org/standardizeddcps/default.asp">UPnP(TM) Standards</a></p>
+<li><p><a href="http://forums.winamp.com/showthread.php?threadid=65772">The Unofficial M3U and PLS Specification</a></p>
+<li><p><a href="ftp://ftp.isi.edu/in-notes/rfc2616.txt">RFC 2616: Hypertext Transfer Protocol -- HTTP/1.1</a></p>
+<li><p><a href="http://www.smackfu.com/stuff/programming/shoutcast.html">Shoutcast Metadata Protocol</a></p>
+<li><p><a href="http://www.gigamonkeys.com/book/practical-a-shoutcast-server.html">The Shoutcast Protocol</a></p>
 </ul>
 <h1>Homepage</h1>
 <p>Web site and file area for GMediaServer is hosted on <a href="http://savannah.nongnu.org/">Savannah</a>:</p>
@@ -166,7 +176,7 @@ man ./gmediaserver.1
 <p>UPnP&trade; is a trademark of the UPnP&trade; Implementers Corporation.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-08-13.
+This document was generated on 2005-08-29.
 </div>
 </body>
 </html>

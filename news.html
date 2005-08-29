@@ -7,6 +7,23 @@
 </head>
 <body>
 <h1>GMediaServer - History</h1>
+<p>2005-08-29: GMediaServer 0.7.0 released.</p>
+<div class="block">
+Add transparent support for fetching audio data from remote HTTP and ICY servers (Icecast, Shoutcast etc). This means you can listen to web radio on the media player - GMediaServer acts as a kind of proxy between the remote server and the media player. Get rid of the <code>http</code> file type since this is automaticly supported now.<br>
+Add support for character set conversion using <code>--in-charset</code> and <code>--device-charset</code> options (suggested by Rémi Turboult).<br>
+Add Gnulib modules <code>getline</code>, <code>c-ctype</code> for web client support.<br>
+Add modules <code>hmap</code> and <code>comparison</code> for web client support.<br>
+Fix bug in code generating response for <code>Browse</code> and <code>Search</code> actions - <code>&lt;item&gt;</code> would not be matched with <code>&lt;/item&gt;</code>, same for <code>&lt;container&gt;</code> (reported by Jean-François Remy, James E. Flemer, Ivo Clarysse and Rémi Turboult).<br>
+Fix compilation problem on FreeBSD - <code>sys/socket.h</code> needed to be included before some other header files (patch from James E. Flemer).<br>
+Fix compilation problems on FreeBSD by including certain header files (patch from James E. Flemer).<br>
+Changed profile settings for Omnifi DMS1 (<code>dms1</code>) (patch from James E. Flemer).<br>
+Fix potential segmentation fault in code handling playlists (patch from James E. Flemer).<br>
+Add info about FreeBSD port to web site (from James E. Flemer).<br>
+Parse PLS playlists case insensitively (except header) (patch from James E. Flemer).<br>
+Abort reading of playlist after 16 incorrect lines/files.<br>
+Allow case insensitive <code>http://</code> URLs in playlists (patch from James E. Flemer).<br>
+Added some more References to documentation.<br>
+</div>
 <p>2005-08-13: GMediaServer 0.6.0 released.</p>
 <div class="block">
 Changed type sent by <code>ConnectionManager::ProtocolInfo</code> to <code>http-get:*:*:*</code>.<br>
@@ -93,7 +110,7 @@ First release.<br>
 <p>Click <a href="index.html">here</a> to return to the main page.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-08-13.
+This document was generated on 2005-08-29.
 </div>
 </body>
 </html>
