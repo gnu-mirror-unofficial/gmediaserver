@@ -8,40 +8,45 @@
 <body>
 <h1>GMediaServer - Introduction</h1>
 <p>GMediaServer is a UPnP&trade; music media server. It implements the server component that provides UPnP media devices with information on available audio files. GMediaServer uses the built-in http server of libupnp to stream the audio files to clients.</p>
-<p>A number of media devices have been tested and are confirmed to work with GMediaServer. Among then are NETGEAR<sup><small>&reg;</small></sup> MP101, Linksys<sup><small>&reg;</small></sup> WMLS11B and WML11B, Philips Streamium SL300i and RC9800i, and Omnify DMS1. See below for a full list.</p>
+<p>A number of media devices have been tested and are confirmed to work with GMediaServer. Among then are NETGEAR<sup><small>&reg;</small></sup> MP101, Linksys<sup><small>&reg;</small></sup> WMLS11B and WML11B, Philips Streamium SL300i and RC9800i, and Omnifi DMS1. See below for a full list.</p>
 <p>Other UPnP media devices (including software based) may work as well - see below for a more detailed list of supported devices. For a quick start, see the Usage and Known Bugs sections below.</p>
 <p>GMediaServer is written in C by <a href="mailto:oskar@osk.mine.nu">Oskar Liljeblad</a>. It should compile and run on any modern POSIX compatible system such as Linux. GMediaServer is a console based application which is usually run in the background.</p>
 <p>GMediaServer is free software - it is licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> (GPL).</p>
 <p>This project is in an early stage of development. Many essential features are planned for the future. With your help, we will make a media server that can compete with the proprietary (and Windows-only) servers bundled with media device hardware.</p>
 <h1>News</h1>
-<p>2005-08-29: GMediaServer 0.7.0 released.</p>
+<p>2005-09-16: GMediaServer 0.8.0 released.</p>
 <div class="block">
-Add transparent support for fetching audio data from remote HTTP and ICY servers (Icecast, Shoutcast etc). This means you can listen to web radio on the media player - GMediaServer acts as a kind of proxy between the remote server and the media player. Get rid of the <code>http</code> file type since this is automaticly supported now.<br>
-Add support for character set conversion using <code>--in-charset</code> and <code>--device-charset</code> options (suggested by Rémi Turboult).<br>
-Add Gnulib modules <code>getline</code>, <code>c-ctype</code> for web client support.<br>
-Add modules <code>hmap</code> and <code>comparison</code> for web client support.<br>
-Fix bug in code generating response for <code>Browse</code> and <code>Search</code> actions - <code>&lt;item&gt;</code> would not be matched with <code>&lt;/item&gt;</code>, same for <code>&lt;container&gt;</code> (reported by Jean-François Remy, James E. Flemer, Ivo Clarysse and Rémi Turboult).<br>
-Fix compilation problem on FreeBSD - <code>sys/socket.h</code> needed to be included before some other header files (patch from James E. Flemer).<br>
-Fix compilation problems on FreeBSD by including certain header files (patch from James E. Flemer).<br>
-Changed profile settings for Omnifi DMS1 (<code>dms1</code>) (patch from James E. Flemer).<br>
-Fix potential segmentation fault in code handling playlists (patch from James E. Flemer).<br>
-Add info about FreeBSD port to web site (from James E. Flemer).<br>
-Parse PLS playlists case insensitively (except header) (patch from James E. Flemer).<br>
-Abort reading of playlist after 16 incorrect lines/files.<br>
-Allow case insensitive <code>http://</code> URLs in playlists (patch from James E. Flemer).<br>
-Added some more References to documentation.<br>
+Implement crude rescanning support - directories are now rescanned when the main process receives the signal USR1.<br>
+Fix segmentation fault when listing files with partial ID3 tag (patch from Ivo Clarysse).<br>
+Escape XML characters (such as &lt; and &gt;) in data sent to media player properly (patch from Ivo Clarysse).<br>
+Accept more filter values for ContentDirectory.Browse, and Search actions (patch from Ivo Clarysse).<br>
+Added links to other software in the same category as GMediaServer.<br>
+Fix potentially incorrect error messages caused by free function clobbering errno.<br>
+Created a mailing list <code>gmediaserver-devel@nongnu.org</code> which is open to everyone<br>
+Implement UPnP variable request and subscription support. Added <code>SystemUpdateID</code> variable for the ContentDirectory service. Added <code>SourceProtocolInfo</code>, <code>SinkProtocolInfo</code>, and <code>CurrentConnectionIDs</code> variables for the ConnectionManager service.<br>
+Implemented ContentDirectory SystemUpdateId variable.<br>
+Fixed README typos (James E. Flemer).<br>
+Sort scanned entries alphabetically (James E. Flemer).<br>
+ConnectionManager <code>GetCurrentConnectionIDs</code> action now returns <code>"0"</code> for better standard compliance.<br>
+Added gnulib module <code>getaddrinfo</code> for improved portability.<br>
 </div>
 <p>The complete history of GMediaServer can be seen <a href="news.html">here</a>.</p>
 <h1>Download</h1>
-<p>The latest version of GMediaServer is 0.7.0, which was released on 2005-08-29:</p>
+<p>The latest version of GMediaServer is 0.8.0, which was released on 2005-09-16:</p>
 <ul>
-<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.7.0.tar.gz">Source code tarball</a></li>
+<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.8.0.tar.gz">Source code tarball</a></li>
 </ul>
 <p>These files, as well as older versions, are available in the <a href="http://savannah.nongnu.org/download/gmediaserver/">GMediaServer file area</a>.</p>
 <p>A FreeBSD "port" is also available of GMediaServer. You can find the necessary files to build a package here:</p>
 <div class="block">
 <a href="http://www.uvm.edu/~jflemer/omnifi/gmediaserver-port.tar.gz">http://www.uvm.edu/~jflemer/omnifi/gmediaserver-port.tar.gz</a><br>
 </div>
+<h1>Mailing List</h1>
+<p>The mailing list <code>gmediaserver-devel</code> is open for any discussion about GMediaServer, ranging from questions on how to use GMediaServer to development inquiries. Archive and subscription information can be found on the list information page:</p>
+<div class="block">
+<a href="http://lists.nongnu.org/mailman/listinfo/gmediaserver-devel">http://lists.nongnu.org/mailman/listinfo/gmediaserver-devel</a><br>
+</div>
+<p>Please subscribe before you post to this list. Non-subscriber postings need to be approved by the moderator.</p>
 <h1>Other Links</h1>
 <p>GMediaServer is mentioned on the following pages:</p>
 <ul>
@@ -52,6 +57,16 @@ Added some more References to documentation.<br>
 <p>The following UPnP media server clients work with GMediaServer:</p>
 <ul>
 <li><a href="http://djmount.sourceforge.net/">djmount</a></li>
+</ul>
+<p>The following UPnP media server clients may work with GMediaServer, but have not been tested:</p>
+<ul>
+<li><a href="http://www.cidero.com/">Cidero Media Controller</a></li>
+</ul>
+<p>There are media server implementations other than GMediaServer:</p>
+<ul>
+<li><a href="http://soggie.soti.org/gmediarender/">GMediaRender</a></li>
+<li><a href="http://mediatomb.sourceforge.net/">MediaTomb</a></li>
+<li><a href="http://www.cidero.com/">Cidero Internet Radio Server</a></li>
 </ul>
 <h1>Copyright and License</h1>
 <p>GMediaServer is copyright (C) 2005 Oskar Liljeblad.</p>
@@ -176,7 +191,7 @@ man ./gmediaserver.1
 <p>UPnP&trade; is a trademark of the UPnP&trade; Implementers Corporation.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-08-29.
+This document was generated on 2005-09-16.
 </div>
 </body>
 </html>

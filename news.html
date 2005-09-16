@@ -7,6 +7,22 @@
 </head>
 <body>
 <h1>GMediaServer - History</h1>
+<p>2005-09-16: GMediaServer 0.8.0 released.</p>
+<div class="block">
+Implement crude rescanning support - directories are now rescanned when the main process receives the signal USR1.<br>
+Fix segmentation fault when listing files with partial ID3 tag (patch from Ivo Clarysse).<br>
+Escape XML characters (such as &lt; and &gt;) in data sent to media player properly (patch from Ivo Clarysse).<br>
+Accept more filter values for ContentDirectory.Browse, and Search actions (patch from Ivo Clarysse).<br>
+Added links to other software in the same category as GMediaServer.<br>
+Fix potentially incorrect error messages caused by free function clobbering errno.<br>
+Created a mailing list <code>gmediaserver-devel@nongnu.org</code> which is open to everyone<br>
+Implement UPnP variable request and subscription support. Added <code>SystemUpdateID</code> variable for the ContentDirectory service. Added <code>SourceProtocolInfo</code>, <code>SinkProtocolInfo</code>, and <code>CurrentConnectionIDs</code> variables for the ConnectionManager service.<br>
+Implemented ContentDirectory SystemUpdateId variable.<br>
+Fixed README typos (James E. Flemer).<br>
+Sort scanned entries alphabetically (James E. Flemer).<br>
+ConnectionManager <code>GetCurrentConnectionIDs</code> action now returns <code>"0"</code> for better standard compliance.<br>
+Added gnulib module <code>getaddrinfo</code> for improved portability.<br>
+</div>
 <p>2005-08-29: GMediaServer 0.7.0 released.</p>
 <div class="block">
 Add transparent support for fetching audio data from remote HTTP and ICY servers (Icecast, Shoutcast etc). This means you can listen to web radio on the media player - GMediaServer acts as a kind of proxy between the remote server and the media player. Get rid of the <code>http</code> file type since this is automaticly supported now.<br>
@@ -110,7 +126,7 @@ First release.<br>
 <p>Click <a href="index.html">here</a> to return to the main page.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-08-29.
+This document was generated on 2005-09-16.
 </div>
 </body>
 </html>
