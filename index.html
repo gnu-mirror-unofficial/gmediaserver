@@ -8,33 +8,27 @@
 <body>
 <h1>GMediaServer - Introduction</h1>
 <p>GMediaServer is a UPnP&trade; music media server. It implements the server component that provides UPnP media devices with information on available audio files. GMediaServer uses the built-in http server of libupnp to stream the audio files to clients.</p>
-<p>A number of media devices have been tested and are confirmed to work with GMediaServer. Among then are NETGEAR<sup><small>&reg;</small></sup> MP101, Linksys<sup><small>&reg;</small></sup> WMLS11B and WML11B, Philips Streamium SL300i and RC9800i, and Omnifi DMS1. See below for a full list.</p>
+<p>A number of media devices have been tested and are confirmed to work with GMediaServer. Among then are NETGEAR<sup><small>&reg;</small></sup> MP101, Linksys<sup><small>&reg;</small></sup> WMLS11B and WML11B, Philips Streamium SL300i and RC9800i, Omnifi DMS1, and SMC EZ Stream&trade; SMCWAA-B. See below for a full list.</p>
 <p>Other UPnP media devices (including software based) may work as well - see below for a more detailed list of supported devices. For a quick start, see the Usage and Known Bugs sections below.</p>
 <p>GMediaServer is written in C by <a href="mailto:oskar@osk.mine.nu">Oskar Liljeblad</a>. It should compile and run on any modern POSIX compatible system such as Linux. GMediaServer is a console based application which is usually run in the background.</p>
 <p>GMediaServer is free software - it is licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> (GPL).</p>
 <p>This project is in an early stage of development. Many essential features are planned for the future. With your help, we will make a media server that can compete with the proprietary (and Windows-only) servers bundled with media device hardware.</p>
 <h1>News</h1>
-<p>2005-09-16: GMediaServer 0.8.0 released.</p>
+<p>2005-12-13: GMediaServer 0.9.0 released.</p>
 <div class="block">
-Implement crude rescanning support - directories are now rescanned when the main process receives the signal USR1.<br>
-Fix segmentation fault when listing files with partial ID3 tag (patch from Ivo Clarysse).<br>
-Escape XML characters (such as &lt; and &gt;) in data sent to media player properly (patch from Ivo Clarysse).<br>
-Accept more filter values for ContentDirectory.Browse, and Search actions (patch from Ivo Clarysse).<br>
-Added links to other software in the same category as GMediaServer.<br>
-Fix potentially incorrect error messages caused by free function clobbering errno.<br>
-Created a mailing list <code>gmediaserver-devel@nongnu.org</code> which is open to everyone<br>
-Implement UPnP variable request and subscription support. Added <code>SystemUpdateID</code> variable for the ContentDirectory service. Added <code>SourceProtocolInfo</code>, <code>SinkProtocolInfo</code>, and <code>CurrentConnectionIDs</code> variables for the ConnectionManager service.<br>
-Implemented ContentDirectory SystemUpdateId variable.<br>
-Fixed README typos (James E. Flemer).<br>
-Sort scanned entries alphabetically (James E. Flemer).<br>
-ConnectionManager <code>GetCurrentConnectionIDs</code> action now returns <code>"0"</code> for better standard compliance.<br>
-Added gnulib module <code>getaddrinfo</code> for improved portability.<br>
+Link with <code>LIBICONV</code> and <code>LIBINTL</code> for proper portability (patch from James E. Flemer).<br>
+Initialize and deinitialize ContentDirectory service properly, fixing segfaults (reported by Glen Stewart).<br>
+Mention uShare in <i>Other Links</i> (from Benjamin Zores).<br>
+Mention SMC EZ Stream&trade; SMCWAA-B among tested devices (from Ben Hall).<br>
+Changed wording in Dependencies in README.<br>
+Fix handling of filters in <code>Browse</code> and <code>Search</code> requests (patch from Wolfgan Kless).<br>
+Fix bug in subscription handling code (patch from Rémi Turboult).<br>
 </div>
 <p>The complete history of GMediaServer can be seen <a href="news.html">here</a>.</p>
 <h1>Download</h1>
-<p>The latest version of GMediaServer is 0.8.0, which was released on 2005-09-16:</p>
+<p>The latest version of GMediaServer is 0.9.0, which was released on 2005-12-13:</p>
 <ul>
-<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.8.0.tar.gz">Source code tarball</a></li>
+<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.9.0.tar.gz">Source code tarball</a></li>
 </ul>
 <p>These files, as well as older versions, are available in the <a href="http://savannah.nongnu.org/download/gmediaserver/">GMediaServer file area</a>.</p>
 <p>A FreeBSD "port" is also available of GMediaServer. You can find the necessary files to build a package here:</p>
@@ -67,6 +61,7 @@ Added gnulib module <code>getaddrinfo</code> for improved portability.<br>
 <li><a href="http://soggie.soti.org/gmediarender/">GMediaRender</a></li>
 <li><a href="http://mediatomb.sourceforge.net/">MediaTomb</a></li>
 <li><a href="http://www.cidero.com/">Cidero Internet Radio Server</a></li>
+<li><a href="http://ushare.geexbox.org/">uShare</a></li>
 </ul>
 <h1>Copyright and License</h1>
 <p>GMediaServer is copyright (C) 2005 Oskar Liljeblad.</p>
@@ -100,7 +95,7 @@ Added gnulib module <code>getaddrinfo</code> for improved portability.<br>
 <p>The following libraries are required to build and run GMediaServer:</p>
 <ul>
 <li><p>Linux SDK for UPnP Devices (libupnp), 1.2.1 or later</p>
-<p>The libupnp library is used to communicate using the UPnP protocol. libupnp can be downloaded from http://upnp.sourceforge.net/.</p>
+<p>The libupnp library is used for communication using the UPnP protocol. libupnp can be downloaded from http://upnp.sourceforge.net/.</p>
 <p>Debian packages for libupnp are currently available in testing (and unstable). The runtime package is called <code>libupnp0</code>, and the package required when building <code>libupnp-dev</code>. Packages for stable (woody) can be downloaded from <a href="http://detroit.ddo.jp/debian/woody/">http://detroit.ddo.jp/debian/woody/</a>. The runtime package is called <code>libupnp1</code>, and the development package <code>libupnp1-dev</code>.</p>
 </ul>
 <p>The following libraries are optional:</p>
@@ -141,12 +136,15 @@ man ./gmediaserver.1
 <p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.homecontrol.philips.com/">http://www.homecontrol.philips.com/</a></p>
 <li><p>Omnifi DMS1</p>
 <p><i>Profile:</i> <code>dms1</code><br> <i>URL:</i> <a href="http://omnifimedia.com/products/omnifi_details.jsp?productId=12542">http://omnifimedia.com/products/omnifi_details.jsp?productId=12542</a><br> <i>Notes:</i> Requires <code>--expire-time=1801</code> (or greater than 1801).</p>
+<li><p>SMC EZ Stream&trade; 11Mbps Wireless Audio Adaptor (SMCWAA-B)</p>
+<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.smc.com/index.cfm?event=viewProduct&localeCode=EN_USA&cid=11&scid=&pid=1333">http://www.smc.com/index.cfm?event=viewProduct&localeCode=EN_USA&cid=11&scid=&pid=1333</a><br> <i>Notes:</i> This devices is similar to the Philips SLA5500 and the Terratec Noxon Audio.</p>
 </ul>
 <p>The following devices may work, but have not been tested:</p>
 <ul>
 <li><p>Philips Streamium 400i</p>
 <p><i>URL:</i> <a href="http://www.streamium.com/">http://www.streamium.com/</a></p>
-<li><p>SMC EZ-Stream</p>
+<li><p>SMC EZ Stream&trade; Universal Wireless Multimedia Receiver (SMCWMR-AG)</p>
+<li><p>SMC EZ Stream&trade; 802.11g Wireless Audio Adapter (SMCWAA-G)</p>
 <li><p>Terratec Noxon</p>
 <li><p>Roku</p>
 <li><p>D-Link DSM-320</p>
@@ -189,9 +187,10 @@ man ./gmediaserver.1
 <p>"Linksys" is a registered trademark of The Linksys Group, Inc.</p>
 <p>"Philips" is a registered trademark of Koninklijke Philips Electronics N.V.</p>
 <p>UPnP&trade; is a trademark of the UPnP&trade; Implementers Corporation.</p>
+<p>SMC and SMC EZ Stream&trade; are registered trademarks of SMC Networks Inc.</p>
 <div class="footer">
 <hr>
-This document was generated on 2005-09-16.
+This document was generated on 2005-12-13.
 </div>
 </body>
 </html>
