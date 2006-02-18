@@ -1,196 +1,227 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>GMediaServer home</title>
-<link rel="stylesheet" href="style.css" type="text/css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="Author" content="Oskar Liljeblad">
+  <title>GMediaServer home</title>
+  <link rel="stylesheet" type="text/css" href="/gnu.css">
+  <link rev="made" href="mailto:oskar@osk.mine.nu">
 </head>
 <body>
-<h1>GMediaServer - Introduction</h1>
-<p>GMediaServer is a UPnP&trade; music media server. It implements the server component that provides UPnP media devices with information on available audio files. GMediaServer uses the built-in http server of libupnp to stream the audio files to clients.</p>
-<p>A number of media devices have been tested and are confirmed to work with GMediaServer. Among then are NETGEAR<sup><small>&reg;</small></sup> MP101, Linksys<sup><small>&reg;</small></sup> WMLS11B and WML11B, Philips Streamium SL300i and RC9800i, Omnifi DMS1, and SMC EZ Stream&trade; SMCWAA-B. See below for a full list.</p>
-<p>Other UPnP media devices (including software based) may work as well - see below for a more detailed list of supported devices. For a quick start, see the Usage and Known Bugs sections below.</p>
-<p>GMediaServer is written in C by <a href="mailto:oskar@osk.mine.nu">Oskar Liljeblad</a>. It should compile and run on any modern POSIX compatible system such as Linux. GMediaServer is a console based application which is usually run in the background.</p>
-<p>GMediaServer is free software - it is licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> (GPL).</p>
-<p>This project is in an early stage of development. Many essential features are planned for the future. With your help, we will make a media server that can compete with the proprietary (and Windows-only) servers bundled with media device hardware.</p>
-<h1>News</h1>
-<p>2005-12-13: GMediaServer 0.9.0 released.</p>
-<div class="block">
-Link with <code>LIBICONV</code> and <code>LIBINTL</code> for proper portability (patch from James E. Flemer).<br>
-Initialize and deinitialize ContentDirectory service properly, fixing segfaults (reported by Glen Stewart).<br>
-Mention uShare in <i>Other Links</i> (from Benjamin Zores).<br>
-Mention SMC EZ Stream&trade; SMCWAA-B among tested devices (from Ben Hall).<br>
-Changed wording in Dependencies in README.<br>
-Fix handling of filters in <code>Browse</code> and <code>Search</code> requests (patch from Wolfgan Kless).<br>
-Fix bug in subscription handling code (patch from Rémi Turboult).<br>
-</div>
-<p>The complete history of GMediaServer can be seen <a href="news.html">here</a>.</p>
-<h1>Download</h1>
-<p>The latest version of GMediaServer is 0.9.0, which was released on 2005-12-13:</p>
-<ul>
-<li><a href="http://savannah.nongnu.org/download/gmediaserver/gmediaserver-0.9.0.tar.gz">Source code tarball</a></li>
-</ul>
-<p>These files, as well as older versions, are available in the <a href="http://savannah.nongnu.org/download/gmediaserver/">GMediaServer file area</a>.</p>
-<p>A FreeBSD "port" is also available of GMediaServer. You can find the necessary files to build a package here:</p>
-<div class="block">
-<a href="http://www.uvm.edu/~jflemer/omnifi/gmediaserver-port.tar.gz">http://www.uvm.edu/~jflemer/omnifi/gmediaserver-port.tar.gz</a><br>
-</div>
-<h1>Mailing List</h1>
-<p>The mailing list <code>gmediaserver-devel</code> is open for any discussion about GMediaServer, ranging from questions on how to use GMediaServer to development inquiries. Archive and subscription information can be found on the list information page:</p>
-<div class="block">
-<a href="http://lists.nongnu.org/mailman/listinfo/gmediaserver-devel">http://lists.nongnu.org/mailman/listinfo/gmediaserver-devel</a><br>
-</div>
-<p>Please subscribe before you post to this list. Non-subscriber postings need to be approved by the moderator.</p>
-<h1>Other Links</h1>
-<p>GMediaServer is mentioned on the following pages:</p>
-<ul>
-<li><a href="http://savannah.nongnu.org/projects/gmediaserver/">Savannah project summary for GMediaServer</a></li>
-<li><a href="http://freshmeat.net/projects/gmediaserver/">Freshmeat project record for GMediaServer</a></li>
-<li><a href="http://www.linuxlinks.com/Software/System/Servers/Multimedia/">LinuxLinks category <i>Multimedia Servers</i></a></li>
-</ul>
-<p>The following UPnP media server clients work with GMediaServer:</p>
-<ul>
-<li><a href="http://djmount.sourceforge.net/">djmount</a></li>
-</ul>
-<p>The following UPnP media server clients may work with GMediaServer, but have not been tested:</p>
-<ul>
-<li><a href="http://www.cidero.com/">Cidero Media Controller</a></li>
-</ul>
-<p>There are media server implementations other than GMediaServer:</p>
-<ul>
-<li><a href="http://soggie.soti.org/gmediarender/">GMediaRender</a></li>
-<li><a href="http://mediatomb.sourceforge.net/">MediaTomb</a></li>
-<li><a href="http://www.cidero.com/">Cidero Internet Radio Server</a></li>
-<li><a href="http://ushare.geexbox.org/">uShare</a></li>
-</ul>
-<h1>Copyright and License</h1>
-<p>GMediaServer is copyright (C) 2005 Oskar Liljeblad.</p>
-<p>This program is free software; you can redistribute it and/or modify it under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> as published by the <a href="http://www.fsf.org/">Free Software Foundation</a>; either version 2 of the License, or (at your option) any later version.</p>
-<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> for more details.</p>
-<p>You should have received a copy of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> along with this program; if not, write to the <a href="http://www.fsf.org/">Free Software Foundation</a>, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.</p>
-<p>Note that GMediaServer links with libupnp, which is licensed under the terms of a modified BSD license (i.e. the original BSD license without the advertising clause). This license is compatible with the GNU GPL. GMediaServer optionally links with id3lib, which is licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>.</p>
-<p>The source code of this project may contain files from other projects, and files generated by other projects, including:</p>
-<ul>
-<li><a href="http://www.gnu.org/software/autoconf/">GNU Autoconf</a></li>
-<li><a href="http://sources.redhat.com/automake/">GNU Automake</a></li>
-<li><a href="http://www.gnu.org/software/gettext/">GNU gettext</a></li>
-<li><a href="http://www.gnu.org/software/gnulib/">Gnulib</a></li>
-<li><a href="http://www.gnu.org/software/flex/">Flex</a></li>
-<li><a href="http://www.gnu.org/software/bison/">GNU Bison</a></li>
-<li><a href="http://ac-archive.sourceforge.net/">Autoconf Macro Archive</a></li>
-</ul>
-<p>Such files are licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> or a license compatible with the GNU GPL (as listed on <a href="http://www.gnu.org/licenses/license-list.html">http://www.gnu.org/licenses/license-list.html</a>). See each file for copyright details.</p>
-<p>The Swedish translations in the <code>po</code> directory may contain translations from other projects, including:</p>
-<ul>
-<li><a href="http://www.gnu.org/software/libc/libc.html">GNU C Library</a> </li>
-<li><a href="http://www.gnu.org/software/coreutils/">GNU Core Utilities</a></li>
-</ul>
-<p>See the specific message file (PO file) for copyright of those messages.</p>
-<h1>Requirements</h1>
-<p>The following programs are required to build GMediaServer:</p>
-<ul>
-<li><p>GNU C Compiler (gcc), 2.95 or later.</p>
-<p>GMediaServer uses some features specific to gcc 2.95, such as macros with variable number of arguments. The GNU C Compiler is part of the <a href="http://gcc.gnu.org/">GNU Compiler Collection</a> which can be downloaded from <a href="http://gcc.gnu.org/">http://gcc.gnu.org/</a>. In Debian and many other distributions the package is called <code>gcc</code>.</p>
-</ul>
-<p>The following libraries are required to build and run GMediaServer:</p>
-<ul>
-<li><p>Linux SDK for UPnP Devices (libupnp), 1.2.1 or later</p>
-<p>The libupnp library is used for communication using the UPnP protocol. libupnp can be downloaded from http://upnp.sourceforge.net/.</p>
-<p>Debian packages for libupnp are currently available in testing (and unstable). The runtime package is called <code>libupnp0</code>, and the package required when building <code>libupnp-dev</code>. Packages for stable (woody) can be downloaded from <a href="http://detroit.ddo.jp/debian/woody/">http://detroit.ddo.jp/debian/woody/</a>. The runtime package is called <code>libupnp1</code>, and the development package <code>libupnp1-dev</code>.</p>
-</ul>
-<p>The following libraries are optional:</p>
-<ul>
-<li><p>ID3v1/ID3v2 Tagging Library (id3lib), 3.8 or later</p>
-<p>This library allows GMediaServer to retrieve ID3 information from MP3 files. id3lib can be downloaded from <a href="http://id3lib.sourceforge.net/">http://id3lib.sourceforge.net/</a>.</p>
-<p>The Debian package for id3lib is currently available in testing (and unstable) and is called <code>libid3-3.8.3</code>. <code>libid3-3.8.3-dev</code> is required when building. The version available in stable (woody) - 3.7.13 - is too old. However, there are numerous sites providing backports of 3.8 and later to stable. One such site is <a href="http://www.iua.upf.es/mtg/clam/download/debian/woody/">http://www.iua.upf.es/mtg/clam/download/debian/woody/</a>.</p>
-</ul>
-<h1>Building and Installation</h1>
-<p>Compile GMediaServer by running <code>configure</code> and then <code>make</code>. This should produce an executable <code>gmediaserver</code> in the <code>src</code> subdirectory, which can be used right away. No extra files need to be installed.</p>
-<p>If you want to install GMediaServer on your system, run <code>make install</code>. This will copy the executable into the appropriate directory (<code>/usr/local/bin</code> by default).</p>
-<p>For more information regarding <code>configure</code> and <code>make</code>, see the <a href="http://www.gnu.org/software/autoconf/manual/autoconf-2.57/html_node/autoconf_139.html">INSTALL</a> document.</p>
-<h1>Usage</h1>
-<p>GMediaServer runs from the console only. It supports the usual <code>--help</code> option which displays usage and option information. GMediaServer expects a directory argument, specifying where audio files are stored. You should probably also use the <code>-i</code> (<code>--interface</code>) option to specify which interface GMediaServer should listen on. The first times you run GMediaServer it would also be a good idea to increase the verbosity. Example:</p>
-<div class="block">
-<pre>
-./gmediaserver -ieth1 -v4 /audio
-</pre>
-</div>
-<p>Check out the <code>--profile</code> option, which allows settings for certain devices to be automaticly enabled. See the manual page for  more details:</p>
-<div class="block">
-<pre>
-man ./gmediaserver.1
-</pre>
-</div>
-<h1>Supported Devices</h1>
-<p>The following media devices have been tested and are confirmed to work with GMediaServer:</p>
-<ul>
-<li><p>NETGEAR<sup><small>&reg;</small></sup> Wireless Digital Music Player (MP101)</p>
-<p><i>Profile:</i> <code>mp101</code><br> <i>URL:</i> <a href="http://www.netgear.com/products/details/MP101.php">http://www.netgear.com/products/details/MP101.php</a><br> <i>Notes:</i> You probably need to upgrade the firmware to 1.3.7 or later to use GMediaServer with the MP101.</p>
-<li><p>Linksys<sup><small>&reg;</small></sup> Wireless-B Music System (WMLS11B)</p>
-<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.linksys.com/products/product.asp?grid=33&amp;scid=38&amp;prid=631">http://www.linksys.com/products/product.asp?grid=33&amp;scid=38&amp;prid=631</a></p>
-<li><p>Linksys<sup><small>&reg;</small></sup> Wireless-B Media Link for Music (WML11B)</p>
-<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.linksys.com/products/product.asp?grid=33&amp;prid=632">http://www.linksys.com/products/product.asp?grid=33&amp;prid=632</a><br> <i>Notes:</i> It may be necessary to manually select a new song to play when the current song  has finished playing. This problem has not been solved yet.</p>
-<li><p>Philips Streamium SL300i</p>
-<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.streamium.com/products/sl300i/">http://www.streamium.com/products/sl300i/</a><br> <i>Notes:</i> Confirmed to work with GMediaServer with firmware 1.5.2.</p>
-<li><p>Philips Streamium RC9800i</p>
-<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.homecontrol.philips.com/">http://www.homecontrol.philips.com/</a></p>
-<li><p>Omnifi DMS1</p>
-<p><i>Profile:</i> <code>dms1</code><br> <i>URL:</i> <a href="http://omnifimedia.com/products/omnifi_details.jsp?productId=12542">http://omnifimedia.com/products/omnifi_details.jsp?productId=12542</a><br> <i>Notes:</i> Requires <code>--expire-time=1801</code> (or greater than 1801).</p>
-<li><p>SMC EZ Stream&trade; 11Mbps Wireless Audio Adaptor (SMCWAA-B)</p>
-<p><i>Profile:</i> <code>generic</code><br> <i>URL:</i> <a href="http://www.smc.com/index.cfm?event=viewProduct&localeCode=EN_USA&cid=11&scid=&pid=1333">http://www.smc.com/index.cfm?event=viewProduct&localeCode=EN_USA&cid=11&scid=&pid=1333</a><br> <i>Notes:</i> This devices is similar to the Philips SLA5500 and the Terratec Noxon Audio.</p>
-</ul>
-<p>The following devices may work, but have not been tested:</p>
-<ul>
-<li><p>Philips Streamium 400i</p>
-<p><i>URL:</i> <a href="http://www.streamium.com/">http://www.streamium.com/</a></p>
-<li><p>SMC EZ Stream&trade; Universal Wireless Multimedia Receiver (SMCWMR-AG)</p>
-<li><p>SMC EZ Stream&trade; 802.11g Wireless Audio Adapter (SMCWAA-G)</p>
-<li><p>Terratec Noxon</p>
-<li><p>Roku</p>
-<li><p>D-Link DSM-320</p>
-<li><p>Buffalo LinkTheater</p>
-<li><p>Sony STR-LV700R</p>
-<li><p>Sony GoVideo 2730</p>
-<li><p>LinkSys WMLS11B</p>
-<li><p>Sony RoomLink</p>
-</ul>
-<h1>References</h1>
-<p>Note that this list of references is not complete.</p>
-<ul>
-<li><p><a href="http://www.upnp.org/standardizeddcps/default.asp">UPnP(TM) Standards</a></p>
-<li><p><a href="http://forums.winamp.com/showthread.php?threadid=65772">The Unofficial M3U and PLS Specification</a></p>
-<li><p><a href="ftp://ftp.isi.edu/in-notes/rfc2616.txt">RFC 2616: Hypertext Transfer Protocol -- HTTP/1.1</a></p>
-<li><p><a href="http://www.smackfu.com/stuff/programming/shoutcast.html">Shoutcast Metadata Protocol</a></p>
-<li><p><a href="http://www.gigamonkeys.com/book/practical-a-shoutcast-server.html">The Shoutcast Protocol</a></p>
-</ul>
-<h1>Homepage</h1>
-<p>Web site and file area for GMediaServer is hosted on <a href="http://savannah.nongnu.org/">Savannah</a>:</p>
-<div class="block">
-<a href="http://www.nongnu.org/GMediaServer/">http://www.nongnu.org/GMediaServer/</a><br>
-</div>
-<p>The latest version of GMediaServer should always be available on this site.</p>
-<h1>Feedback</h1>
-<p>The author of GMediaServer and this document, Oskar Liljeblad, can be contacted by e-mail on the following address:</p>
-<div class="block">
-<a href="mailto:oskar@osk.mine.nu">oskar@osk.mine.nu</a><br>
-</div>
-<p>Please send bug reports, suggestions, ideas or comments in general to me.</p>
-<p>If you would like to get involved with this project, please don't hesitate to contact me! All contributions are welcomed.</p>
-<h1>Known bugs and limitations</h1>
-<p>There are some compilation warnings due to bugs in GNU flex and libupnp. They can safely be ignored.</p>
-<p>Unfortunately the NETGEAR MP101 is quite buggy, even with the latest firmware (1.3.7 as of writing this). Numerous forum posts on the internet can confirm this. For me, it seems to hang randomly when browsing or when just about to play a song. I have yet to discover what is causing this.</p>
-<p>If you need to listen on more than one interface, you will have to start multiple instances of the media server.</p>
-<p>GMediaServer keeps information on all audio files in memory. If your audio collection is huge, this might be a problem.</p>
-<p>As GMediaServer is in an early stage of development, many essential features are unimplemented.</p>
-<h1>Trademarks</h1>
-<p>NETGEAR is a registered trademark of NETGEAR, Inc.</p>
-<p>"Linksys" is a registered trademark of The Linksys Group, Inc.</p>
-<p>"Philips" is a registered trademark of Koninklijke Philips Electronics N.V.</p>
-<p>UPnP&trade; is a trademark of the UPnP&trade; Implementers Corporation.</p>
-<p>SMC and SMC EZ Stream&trade; are registered trademarks of SMC Networks Inc.</p>
-<div class="footer">
+<p>
+  <a href="#translations">Translations</A> of this page.
+</p>
+
+<h1>GMediaServer</h1>
+<p>
+  <a href="/graphics/agnuhead.html">
+  <img src="/graphics/gnu-head-sm.jpg" alt=" [image of the Head of a GNU] ">
+  </a>
+</p>
+
 <hr>
-This document was generated on 2005-12-13.
+
+<h2>
+  Table of Contents
+</h2>
+<ul>
+  <li><a href="#introduction" id="TOCintroduction" name="TOCintroduction">Introduction to GMediaServer</a></li>
+  <li><a href="#news" id="TOCnews" name="TOCnews">News</a></li>
+  <li><a href="#downloading" id="TOCdownloading" name="TOCdownloading">Downloading GMediaServer</a></li>
+  <li><a href="#documentation" id="TOCdocumentation" name="TOCdocumentation">Documentation</a></li>
+  <li><a href="#lists" id="TOClists" name="TOClists">Mailing Lists</a></li>
+  <li><a href="#enhancement" id="TOCenhancement" name="TOCenhancement">Request an Enhancement</a></li>
+  <li><a href="#bug" id="TOCbug" name="TOCbug">Report a Bug</a></li>
+  <li><a href="#maintainer" id="TOCmaintainer" name="TOCmaintainer">Maintainer</a></li>
+</ul>
+
+<hr>
+
+<h3>
+  <a href="#TOCintroduction" id="introduction" name="introduction">Introduction to GMediaServer</a>
+</h3>
+
+<p>
+GMediaServer is a UPnP compatible media server for the GNU system.  It
+is part of the GNU project.
+</p>
+
+<p>
+GMediaServer serves audio and video files to certain network connected
+media players. Most hardware media players only play music and/or
+video--they don't provide the media themselves. Those media files have
+to come from a device on the network. GMediaServer is a server for such
+UPnP compatible media players, including:
+</p>
+
+<ul>
+  <li><a href="http://www.netgear.com/products/details/MP101.php">NETGEAR Wireless Digital Music Player (MP101)</a></li>
+  <li><a href="http://www.linksys.com/products/product.asp?grid=33&amp;scid=38&amp;prid=631">Linksys(R) Wireless-B Music System (WMLS11B)</a></li>
+  <li><a href="http://www.linksys.com/products/product.asp?grid=33&amp;prid=632">Linksys(R) Wireless-B Media Link for Music (WML11B)</a></li>
+  <li><a href="http://www.streamium.com/products/sl300i/">Philips Streamium SL300i</a></li>
+  <li><a href="http://www.homecontrol.philips.com/">Philips Streamium RC9800i</a></li>
+  <li><a href="http://omnifimedia.com/products/omnifi_details.jsp?productId=12542">Omnifi DMS1</a></li>
+  <li><a href="http://www.smc.com/index.cfm?event=viewProduct&localeCode=EN_USA&cid=11&scid=&pid=1333">SMC EZ Stream 11Mbps Wireless Audio Adaptor (SMCWAA-B)</a></li>
+  <li><a href="http://www.dlink.com/products/?pid=438">D-Link DSM-520 Wireless HD Media Player</a></li>
+  <li><a href="http://www.rokulabs.com/products/soundbridge/index.php">Roku SoundBridge Network Music Player M1000</a></li>
+  <li><a href="http://entertainen.terratec.net/modules.php?op=modload&name=News&file=article&sid=241">Terratec NOXON 2 audio</a></li>
+</ul>
+
+<p>
+Other UPnP media players (including software based) may work as
+well--see the manual for a more complete list.
+</p>
+
+<p>
+GMediaServer is written in C by Oskar Liljeblad. It should compile
+and run on any modern POSIX compatible system such as GNU/Linux.
+GMediaServer is a console based application which is usually run in the
+background. It is free software, licensed under the terms of the <a
+href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>.
+</p>
+
+<h3>
+<a href="#TOCnews" id="news" name="news">News</A>
+</h3>
+
+<p>
+News file from the latest GMediaServer release can be found here:
+</p>
+
+<ul>
+<li><a href="/software/gmediaserver/NEWS">http://www.gnu.org/software/gmediaserver/NEWS</a></li>
+</ul>
+
+<h3>
+<a href="#TOCdownloading" id="downloading" name="downloading">Downloading GMediaServer</A>
+</h3>
+
+<p>
+GMediaServer can be downloaded from 
+<a href="http://download.savannah.gnu.org/releases/gmediaserver/">http://download.savannah.gnu.org/releases/gmediaserver/</a>.
+</p>
+
+<h3>
+<a href="#TOCdocumentation" id="documentation" name="documentation">Documentation</a>
+</h3>
+
+<p>
+GMediaServer documentation is available online in HTML format:
+</p>
+
+<ul>
+<li><a href="/software/gmediaserver/manual/gmediaserver.html">http://www.gnu.org/software/gmediaserver/manual/gmediaserver.html</a></li>
+</ul>
+
+<h3>
+<a href="#TOClists" id="lists" name="lists">Mailing Lists</a>
+</h3> 
+
+<p>
+GMediaServer has a single mailing list:
+<a href="mailto:gmediaserver-devel@gnu.org">&lt;gmediaserver-devel@gnu.org&gt;</a>
+</p> 
+
+<p>
+Archive and subscription information can be
+found on the list information page:
+</p>
+
+<ul>
+<li><a href="http://lists.gnu.org/mailman/listinfo/gmediaserver-devel">http://lists.gnu.org/mailman/listinfo/gmediaserver-devel</a></li>
+</ul>
+
+<h3>
+<a href="#TOCenhancement" id="enhancement" name="enhancement">Request an Enhancement</a>
+</h3> 
+
+<p>
+If you would like any new feature to be included in future versions of 
+GMediaServer, please send a request to
+<a href="mailto:gmediaserver-devel@gnu.org">&lt;gmediaserver-devel@gnu.org&gt;</a>.
+</p> 
+
+<p>
+Please remember that development of GMediaServer is a volunteer effort, and you 
+can also contribute to its development.  For information about 
+contributing to the GNU Project, please read 
+<a href="/help/help.html">How to help GNU</a>.
+</p>
+
+<h3><a href="#TOCbug" id="bug" name="bug">Report a Bug</a></h3>
+
+<p>
+If you think you have found a bug in GMediaServer, then you should send as 
+complete a report as possible to either the mailing list, or the
+maintainer Oskar Liljeblad.
+</p>
+
+<h3>
+<a href="#TOCmaintainer" id="maintainer" name="maintainer">Maintainer</a>
+</h3>
+
+<p>
+GMediaServer is currently being maintained by Oskar Liljeblad
+<a href="mailto:oskar@osk.mine.nu">&lt;oskar@osk.mine.nu&gt;</a>.
+</p> 
+
+<div class="copyright"> 
+<p>
+Return to the <a href="/home.html">GNU Project home page</a>.
+</p>
+
+<p>
+Please send FSF &amp; GNU inquiries to 
+<a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+There are also <a href="/home.html#ContactInfo">other ways to 
+contact</a> the FSF.
+<br>
+Please send broken links and other corrections (or suggestions)
+to <a href="mailto:webmasters@gnu.org"><em>webmasters@gnu.org</em></a>.
+</p>
+
+<p>
+Please see the 
+<a href="/server/standards/README.translations.html">Translations
+README</a> for information on coordinating and submitting
+translations of this article.
+</p>
+
+<p>
+Copyright &copy; 2006 
+Oskar Liljeblad
+<br>
+Verbatim copying and distribution of this entire article are
+permitted worldwide, without royalty, in any medium, provided
+this notice, and the copyright notice, are preserved.
+</p>
+
 </div>
+
+<p class="translations">
+<a id="translations" name="translations"></A>
+<b><a href="/server/standards/README.translations.html">Translations</a>
+of this page:</b><br>
+
+<!-- Please keep this list alphabetical. -->
+<!-- Comment what the language is for each type, i.e. DE is Deutsch.-->
+<!-- If you add a new language here, please -->
+<!-- advise web-translators@gnu.org and add it to -->
+<!--  - /home/www/bin/nightly-vars either TAGSLANG or WEBLANG -->
+<!--  - /home/www/html/server/standards/README.translations.html -->
+<!--  - one of the lists under the section "Translations Underway" -->
+<!--  - if there is a translation team, you also have to add an alias -->
+<!--  to mail.gnu.org:/com/mailer/Aliases -->
+<!-- Please also check you have the 2 letter language code right versus -->
+<!-- <URL:http://www.w3.org/WAI/ER/IG/ert/iso639.htm> -->
+<!-- Please use W3C normative character entities -->
+
+[
+<!-- English --> 
+<a href="/software/gmediaserver/">en</a>
+]
+
+</p>
+
 </body>
 </html>
