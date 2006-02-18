@@ -1,0 +1,189 @@
+2006-02-18: GMediaServer 0.10.0 released. <- FIXME add correct date!
+  GMediaServer is now a GNU project.
+  libupnp is now in stable (sarge) (noted by Andy Wild).
+  Link with libupnp correctly on FreeBSD - use PTHREAD_CFLAGS and
+  PTHREAD_LIBS (help from James E. Flemer).
+  Look for libupnp in /usr/local as well as /usr unless prefix path has
+  been specified manually. 
+  Fix playlist detection code (reported by Cameron Davidson).
+  Added documentation (texinfo format), dual licensed GPL/GFDL.
+  Added TagLib support (inspired by patch from Jiri Wichern).
+  The manual page is also licensed dual licensed GPL/GFDL.
+  Rename --disable-id3 option to --disable-tags. This option is now always
+  available, no matter if GMediaServer is compiled with or without id3lib
+  or taglib support.
+  Mention compatibility with D-Link DSM-520 (from Darrell Dillman).
+  Mention compatibility with Roku SoundBridge M1000 (from Andy Grover).
+  Mention compatibility with Terratec Noxon2 (from Yann Calderara).
+  Fix build problem regarding Yacc and Lex headers.
+
+2005-12-13: GMediaServer 0.9.0 released.
+  Link with LIBICONV and LIBINTL for proper portability (patch from James
+  E. Flemer).
+  Initialize and deinitialize ContentDirectory service properly, fixing
+  segfaults (reported by Glen Stewart).
+  Mention uShare in Other Links (from Benjamin Zores).
+  Mention SMC EZ Stream(TM) SMCWAA-B among tested devices (from Ben Hall).
+  Changed wording in Dependencies in README.
+  Fix handling of filters in Browse and Search requests (patch from Wolfgan
+  Kless).
+  Fix bug in subscription handling code (patch from Rémi Turboult).
+
+2005-09-16: GMediaServer 0.8.0 released.
+  Implement crude rescanning support - directories are now rescanned when
+  the main process receives the signal USR1.
+  Fix segmentation fault when listing files with partial ID3 tag (patch
+  from Ivo Clarysse).
+  Escape XML characters (such as < and >) in data sent to media player
+  properly (patch from Ivo Clarysse).
+  Accept more filter values for ContentDirectory.Browse, and Search actions
+  (patch from Ivo Clarysse).
+  Added links to other software in the same category as GMediaServer.
+  Fix potentially incorrect error messages caused by free function
+  clobbering errno.
+  Created a mailing list gmediaserver-devel@nongnu.org which is open to
+  everyone
+  Implement UPnP variable request and subscription support. Added
+  SystemUpdateID variable for the ContentDirectory service. Added
+  SourceProtocolInfo, SinkProtocolInfo, and CurrentConnectionIDs variables
+  for the ConnectionManager service.
+  Implemented ContentDirectory SystemUpdateId variable.
+  Fixed README typos (James E. Flemer).
+  Sort scanned entries alphabetically (James E. Flemer).
+  ConnectionManager GetCurrentConnectionIDs action now returns "0" for
+  better standard compliance.
+  Added gnulib module getaddrinfo for improved portability.
+
+2005-08-29: GMediaServer 0.7.0 released.
+  Add transparent support for fetching audio data from remote HTTP and ICY
+  servers (Icecast, Shoutcast etc). This means you can listen to web radio
+  on the media player - GMediaServer acts as a kind of proxy between the
+  remote server and the media player. Get rid of the http file type since
+  this is automaticly supported now.
+  Add support for character set conversion using --in-charset and
+  --device-charset options (suggested by Rémi Turboult).
+  Add Gnulib modules getline, c-ctype for web client support.
+  Add modules hmap and comparison for web client support.
+  Fix bug in code generating response for Browse and Search actions -
+  <item> would not be matched with </item>, same for <container> (reported
+  by Jean-François Remy, James E. Flemer, Ivo Clarysse and Rémi Turboult).
+  Fix compilation problem on FreeBSD - sys/socket.h needed to be included
+  before some other header files (patch from James E. Flemer).
+  Fix compilation problems on FreeBSD by including certain header files
+  (patch from James E. Flemer).
+  Changed profile settings for Omnifi DMS1 (dms1) (patch from James E.
+  Flemer).
+  Fix potential segmentation fault in code handling playlists (patch from
+  James E. Flemer).
+  Add info about FreeBSD port to web site (from James E. Flemer).
+  Parse PLS playlists case insensitively (except header) (patch from James
+  E. Flemer).
+  Abort reading of playlist after 16 incorrect lines/files.
+  Allow case insensitive http:// URLs in playlists (patch from James E.
+  Flemer).
+  Added some more References to documentation.
+
+2005-08-13: GMediaServer 0.6.0 released.
+  Changed type sent by ConnectionManager::ProtocolInfo to http-get:*:*:*.
+  Add support for HTTP URLs found in playlists and specified on the command
+  line. Type is http. This is disabled by default - enable it with
+  --file-type=http,[..].
+  Add support for PLS, Simple, and Extended M3U playlists (from James E.
+  Flemer).
+  Add References and Trademarks sections to README and website. Mention
+  that UPnP(TM) is a trademark, and that NETGEAR(R), Linksys(R), Philips
+  are registered trademarks.
+  Improved some error messages.
+  Escape non-printable characters in messages printed on screen.
+  Add Gnulib module quote for better error messages.
+  Add Gnulib module getnline for reading files for playlist support.
+  Enable localization by actually setting locale and text domain on startup
+  (doh!).
+  Added MANIFEST.sources file.
+  Clean up some code, resulting in a new module strutil.
+
+2005-08-09: GMediaServer 0.5.0 released.
+  Improve UPnP compliance by assigning the root entry a non-empty name
+  (required by Intel Device Validator, although this name usually isn't
+  seen on the control point).
+  Improve UPnP complience by supporting Filter for Browse and Search.
+  Improve portability by using nstrftime from Gnulib instead of strftime.
+  Add the concept of profiles, specified with --profile.
+  Add profiles mp101 (Netgear MP101), dms1 (Omnify DMS1), and generic.
+  Add Omnifi DMS1 to list of supported devices (reported by James E.
+  Flemer).
+  Return all results when RequestedCount is 0 for ContentDirectory Browse
+  action (reported by Rémi Turboult).
+  Write correct process id to file when using --background (patch submitted
+  by Jochen Friedrich).
+  Improve portability by only assigning struct sigaction.sa_restorer when
+  available (patch submitted by Jochen Friedrich).
+  Improve portability by adding tempfailure.h (defining TEMP_FAILURE_RETRY
+  when not available).
+  Improve portability by including sys/socket.h in interfaces.c (patch
+  submitted by James E. Flemer).
+  Add manual page (partly from Jochen Friedrich).
+  Add --expire-time option to control UPnP device advertisement expire time
+  necessary for Omnifi DMS1 (from James E. Flemer).
+  Add djmount to links section (from Rémi Turboult).
+  Updated FSF address in copyright and license messages.
+  Fix compile bug: Only include id3.h when id3lib is available (patch
+  submitted by James E. Flemer).
+  Added copyright header to various files missing it.
+  Fix UPnP compliance bug: Send <upnp:class> in search and browse results,
+  not <class> (patch submitted by James E. Flemer).
+  Improve UPnP compliance by putting slash at end of xmlns attribute of the
+  DIDL-Lite tag (patch submitted by James E. Flemer).
+  Improve UPnP compliance by adding size attribute to res tag in browse and
+  search results (patch submitted by James E. Flemer).
+  Add Gnulib module progname and get rid of program_invocation_name to
+  improve portability (from James E. Flemer).
+  Add Gnulib module sig2str and improve error messages regarding received
+  signals.
+  Add the concept of file types, specified with --file-types.
+  Added support for other file formats: iTunes AAC, RIFF WAVE (patch from
+  James E. Flemer).
+  Update README regarding supported devices.
+
+2005-07-05: Web site updated.
+  Fixed download link for package.
+
+2005-07-04: GMediaServer 0.4.0 released.
+  Added Linksys WMLS11B to Supported Devices.
+  Added Philips Streamium SL300i to Supported Devices.
+  Applied patch from Ivo Clarysse adding support for serving schema files
+  through the UPnP internal web server. GMediaServer now works with Philips
+  RC9800i (and probably others) thanks to this patch.
+  Added note about 1.3.7 firmware requirement for the MP101.
+
+2005-05-22: GMediaServer 0.3.0 released.
+  The home page has been redesigned.
+  Support multiple directories on the command line.
+  Update README: dependency wording, copyright and licensing wording
+  regarding dependencies, overview wording, home page, and supported
+  devices.
+  Added Contributors section to AUTHORS document.
+  Remove intl directory, should be there when we are using gettext
+  externally.
+  Fix --verbose option - it didn't work at all (reported by Daniel
+  Bachfeld).
+  Fix device name as displayed by the control point (was being displayed as
+  "(null)").
+  Clean up logging (internally).
+  Support localization through GNU gettext.
+  Add initial swedish translation.
+  Use more gnulib modules, including stdbool and stdint.
+  Work around id3lib bug (it defines false and true).
+  Improve error messages and error reporting for UPnP actions.
+  Do not add SessionID to ContentDirectory Browse response.
+  Add support for ContentDirectory Search action.
+  Implement BrowseMetadata mode in ContentDirectory Browse action.
+  Add initial support for ContentDirectory Search action.
+
+2005-04-16: GMediaServer 0.2.0 released.
+  Updated copyright notice at top of intutil.[ch].
+  Changed README heading: 'web server' => 'http server'.
+  Improved README documentation on dependencies.
+
+2005-04-02: GMediaServer 0.1.0 released.
+  First release.
