@@ -1,4 +1,4 @@
-2006-02-18: GMediaServer 0.10.0 released. <- FIXME add correct date!
+2006-02-18: GMediaServer 0.10.0 released.
   GMediaServer is now a GNU project.
   libupnp is now in stable (sarge) (noted by Andy Wild).
   Link with libupnp correctly on FreeBSD - use PTHREAD_CFLAGS and
