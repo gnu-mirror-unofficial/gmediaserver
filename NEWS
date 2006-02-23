@@ -1,3 +1,17 @@
+2000-00-00: GMediaServer 0.11.0 released. <- FIXME, not released.
+  Search fixes:
+    Return proper search capabilities (""->"*") (patch from Randy Scott).
+    Correct UPnP return value if search criteria wrong (709->708).
+    Memory leak: Free search criteria memory after Search (Randy Scott).
+  Implement sorting for Browse and Search actions (Randy Scott).
+  Support track numbers in output (patch from Randy Scott).
+  Improve and add more output during scanning phase.
+  Add support for FIFO and device files (requested by António Madureira).
+  Fix `make install' bug: include mkinstalldirs (reported by Richard
+  Lapointe).
+  Fix `memory exhausted' error on 64-bit platforms (report and fix from
+  Joerg).
+
 2006-02-18: GMediaServer 0.10.0 released.
   GMediaServer is now a GNU project.
   libupnp is now in stable (sarge) (noted by Andy Wild).

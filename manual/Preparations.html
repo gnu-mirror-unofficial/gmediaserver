@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+<title>Preparations - GMediaServer</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GMediaServer">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Copyright-and-License.html#Copyright-and-License" title="Copyright and License">
+<link rel="next" href="Usage.html#Usage" title="Usage">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual was last updated 17 February 2006 for version
+0.10.1 of GMediaServer.
+
+Copyright (C) 2005, 2006 Oskar Liljeblad
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of either:
+
+     a) the GNU General Public License as published by the Free Software
+     Foundation; either version 2 of the License, or (at your option)
+     any later version, or
+
+     b) the GNU Free Documentation License, version 1.2 or any later
+     version published by the Free Software Foundation; with no
+     Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+     A copy of the GNU General Public License is included in the
+     section entitled "GNU General Public License"; a copy of the GNU
+     Free Documentation License is included in the section entitled
+     "GNU Free Documentation License".
+  -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Preparations"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Usage.html#Usage">Usage</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Copyright-and-License.html#Copyright-and-License">Copyright and License</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">3 Obtaining GMediaServer</h2>
+
+<p>The latest version of GMediaServer is 0.10.1, which was released on 17 February 2006. 
+The source code can be found on <a href="http://download.savannah.gnu.org/releases/gmediaserver/gmediaserver-0.10.1.tar.gz">http://download.savannah.gnu.org/releases/gmediaserver/gmediaserver-0.10.1.tar.gz</a>.
+
+  <p>This file, as well as older versions, are available in the <a href="http://download.savannah.gnu.org/releases/gmediaserver/">GMediaServer file area</a>.
+
+  <p>A FreeBSD "port" is also available of GMediaServer. You can find the necessary files to
+build a package on <a href="http://www.uvm.edu/~jflemer/omnifi/gmediaserver-port.tar.gz">http://www.uvm.edu/~jflemer/omnifi/gmediaserver-port.tar.gz</a>.
+
+<h2 class="chapter">4 Requirements</h2>
+
+<p>GMediaServer is written to work on modern POSIX compatible systems, mainly
+the GNU system. It has been tested on GNU/Linux and FreeBSD.
+
+  <p>The following programs are required to build GMediaServer:
+
+     <ul>
+<li>GNU C Compiler (gcc), 2.95 or later.
+
+     <p>GMediaServer uses some features specific to gcc 2.95,
+such as macros with variable number of arguments. 
+The GNU C Compiler is part of the GNU Compiler Collection
+which can be downloaded from <a href="http://gcc.gnu.org/">http://gcc.gnu.org/</a>. 
+In Debian and many other distributions the package is called <tt>gcc</tt>. 
+</ul>
+
+  <p>The following libraries are required to build and run GMediaServer:
+
+     <ul>
+<li>Linux SDK for UPnP Devices (libupnp), 1.2.1 or later
+
+     <p>The libupnp library is used for communication using the UPnP protocol. libupnp can
+be downloaded from <a href="http://upnp.sourceforge.net/">http://upnp.sourceforge.net/</a>.
+
+     <p>Debian packages for libupnp are available in stable since the <i>Sarge</i>
+release. The runtime package is called &lt;c libupnp0&gt;, and the package
+required when building <tt>libupnp-dev</tt>. 
+</ul>
+
+  <p>The following libraries are optional:
+
+     <ul>
+<li>ID3v1/ID3v2 Tagging Library (id3lib), 3.8 or later
+
+     <p>This library allows GMediaServer to retrieve ID3 information from MP3
+files. id3lib can be downloaded from <a href="http://id3lib.sourceforge.net/">http://id3lib.sourceforge.net/</a>.
+
+     <p>The Debian package for id3lib is currently available in stable (<i>Sarge</i>)
+and is called <tt>libid3-3.8.3</tt>. In testing and unstable, the packages is
+<tt>libid3-3.8.3c2a</tt>. <tt>libid3-3.8.3-dev</tt> is required when building GMediaServer.
+
+     <li>TagLib Audio Meta-Data Library (taglib), 1.4 or later, C bindings
+
+     <p>This library is similar to id3lib in that it retrieves information from
+audio files. TagLib can be downloaded from <a href="http://developer.kde.org/~wheeler/taglib.html">http://developer.kde.org/~wheeler/taglib.html</a>. 
+Note that the C binding are used.
+
+     <p>The Debian package for taglib is currently available in stable (Sarge) and is
+called <tt>libtagc0</tt>. <tt>libtagc0-dev</tt> is required when building GMediaServer. 
+</ul>
+
+<h2 class="chapter">5 Building and Installation</h2>
+
+<p>Compile GMediaServer by running <samp><span class="command">configure</span></samp> and then <samp><span class="command">make</span></samp>. This should
+produce an executable <samp><span class="command">gmediaserver</span></samp> in the <samp><span class="file">src</span></samp> subdirectory, which can be
+used right away. No extra files need to be installed.
+
+  <p>If you want to install GMediaServer on your system, run <samp><span class="command">make install</span></samp>. 
+This will copy the executable into the appropriate directory
+(<samp><span class="file">/usr/local/bin</span></samp> by default).
+
+  <p>For more information regarding <samp><span class="command">configure</span></samp> and <samp><span class="command">make</span></samp>, see the
+<a href="http://www.gnu.org/software/autoconf/manual/autoconf-2.57/html_node/autoconf_139.html">INSTALL</a> document.
+
+<!-- ======================================================================= -->
+</body></html>
+

@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+<title>GMediaServer</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GMediaServer">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="#Top">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual was last updated 17 February 2006 for version
+0.10.1 of GMediaServer.
+
+Copyright (C) 2005, 2006 Oskar Liljeblad
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of either:
+
+     a) the GNU General Public License as published by the Free Software
+     Foundation; either version 2 of the License, or (at your option)
+     any later version, or
+
+     b) the GNU Free Documentation License, version 1.2 or any later
+     version published by the Free Software Foundation; with no
+     Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+     A copy of the GNU General Public License is included in the
+     section entitled "GNU General Public License"; a copy of the GNU
+     Free Documentation License is included in the section entitled
+     "GNU Free Documentation License".
+  -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<h1 class="settitle">GMediaServer</h1>
+  <div class="contents">
+<h2>Table of Contents</h2>
+<ul>
+<li><a name="toc_Top" href="index.html#Top">GMediaServer</a>
+<li><a name="toc_Introduction" href="Introduction.html#Introduction">1 Introduction</a>
+<li><a name="toc_Copyright-and-License" href="Copyright-and-License.html#Copyright-and-License">2 Copyright and License</a>
+<li><a name="toc_Preparations" href="Preparations.html#Preparations">3 Obtaining GMediaServer</a>
+<li><a name="toc_Preparations" href="Preparations.html#Preparations">4 Requirements</a>
+<li><a name="toc_Preparations" href="Preparations.html#Preparations">5 Building and Installation</a>
+<li><a name="toc_Usage" href="Usage.html#Usage">6 Invoking GMediaServer</a>
+<li><a name="toc_Usage" href="Usage.html#Usage">7 Command line options</a>
+<li><a name="toc_Usage" href="Usage.html#Usage">8 Profiles</a>
+<li><a name="toc_Usage" href="Usage.html#Usage">9 File types</a>
+<li><a name="toc_Usage" href="Usage.html#Usage">10 Signals</a>
+<li><a name="toc_Supported-Devices" href="Supported-Devices.html#Supported-Devices">11 Hardware Players</a>
+<li><a name="toc_Supported-Devices" href="Supported-Devices.html#Supported-Devices">12 Software Players</a>
+<li><a name="toc_Support-and-Feedback" href="Support-and-Feedback.html#Support-and-Feedback">13 Home Page</a>
+<li><a name="toc_Support-and-Feedback" href="Support-and-Feedback.html#Support-and-Feedback">14 Mailing List</a>
+<li><a name="toc_Support-and-Feedback" href="Support-and-Feedback.html#Support-and-Feedback">15 Author</a>
+<li><a name="toc_Known-Bugs" href="Known-Bugs.html#Known-Bugs">16 Known bugs and limitations</a>
+<li><a name="toc_References-and-Links" href="References-and-Links.html#References-and-Links">17 References</a>
+<li><a name="toc_References-and-Links" href="References-and-Links.html#References-and-Links">18 Other Links</a>
+<li><a name="toc_Copying-This-Manual" href="Copying-This-Manual.html#Copying-This-Manual">Appendix A Copying This Manual</a>
+<ul>
+<li><a href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">A.1 GNU Free Documentation License</a>
+<ul>
+<li><a href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">A.1.1 ADDENDUM: How to use this License for your documents</a>
+</li></ul>
+</li></ul>
+<li><a name="toc_Copying" href="Copying.html#Copying">Appendix B GNU GENERAL PUBLIC LICENSE</a>
+<ul>
+<li><a href="Copying.html#Copying">B.1 Preamble</a>
+<li><a href="Copying.html#Copying">B.2 How to Apply These Terms to Your New Programs</a>
+</li></ul>
+</li></ul>
+</div>
+
+
+
+<div class="node">
+<p>
+<a name="Top"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Introduction.html#Introduction">Introduction</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
+<hr>
+</div>
+
+<h2 class="unnumbered">GMediaServer</h2>
+
+<p>This manual was last updated 17 February 2006 for version
+0.10.1 of GMediaServer.
+
+  <p>Copyright &copy; 2005, 2006 Oskar Liljeblad
+
+  <blockquote>
+Permission is granted to copy, distribute and/or modify this document
+under the terms of either:
+
+       <p>a) the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option)
+any later version, or
+
+       <p>b) the GNU Free Documentation License, version 1.2 or any later
+version published by the Free Software Foundation; with no
+Invariant Sections, no Front-Cover Texts, and no Back-Cover
+Texts.
+
+       <p>A copy of the GNU General Public License is included in the
+section entitled "GNU General Public License"; a copy of the
+GNU Free Documentation License is included in the section
+entitled "GNU Free Documentation License". 
+</blockquote>
+
+<ul class="menu">
+<li><a accesskey="1" href="Introduction.html#Introduction">Introduction</a>: 		What is GMediaServer
+<li><a accesskey="2" href="Copyright-and-License.html#Copyright-and-License">Copyright and License</a>: 	The legal details
+<li><a accesskey="3" href="Preparations.html#Preparations">Preparations</a>: 		Obtaining and building GMediaServer
+<li><a accesskey="4" href="Usage.html#Usage">Usage</a>: 			How to use GMediaServer
+<li><a accesskey="5" href="Supported-Devices.html#Supported-Devices">Supported Devices</a>: 		Compability with hardware and software devices
+<li><a accesskey="6" href="Known-Bugs.html#Known-Bugs">Known Bugs</a>: 			Known bugs and limitations
+<li><a accesskey="7" href="Support-and-Feedback.html#Support-and-Feedback">Support and Feedback</a>: 	How to report problems and get in touch
+<li><a accesskey="8" href="References-and-Links.html#References-and-Links">References and Links</a>: 	Useful documentation and links
+
+</li></ul>
+<p>Appendices
+
+</p>
+<ul class="menu">
+<li><a accesskey="9" href="Copying-This-Manual.html#Copying-This-Manual">Copying This Manual</a>: 		How you can copy and share this manual. 
+<li><a href="Copying.html#Copying">Copying</a>: 			Another way to copy and share this manual. 
+</ul>
+
+  </body></html>
+

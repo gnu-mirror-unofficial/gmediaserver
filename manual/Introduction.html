@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+<title>Introduction - GMediaServer</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GMediaServer">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="index.html#Top" title="Top">
+<link rel="next" href="Copyright-and-License.html#Copyright-and-License" title="Copyright and License">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual was last updated 17 February 2006 for version
+0.10.1 of GMediaServer.
+
+Copyright (C) 2005, 2006 Oskar Liljeblad
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of either:
+
+     a) the GNU General Public License as published by the Free Software
+     Foundation; either version 2 of the License, or (at your option)
+     any later version, or
+
+     b) the GNU Free Documentation License, version 1.2 or any later
+     version published by the Free Software Foundation; with no
+     Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+     A copy of the GNU General Public License is included in the
+     section entitled "GNU General Public License"; a copy of the GNU
+     Free Documentation License is included in the section entitled
+     "GNU Free Documentation License".
+  -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Introduction"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Copyright-and-License.html#Copyright-and-License">Copyright and License</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="index.html#Top">Top</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">1 Introduction</h2>
+
+<p>GMediaServer is a UPnP compatible media server for the GNU system. 
+It is a GNU program; part of the GNU project.
+
+  <p>GMediaServer serves audio and video files to certain network connected
+media players. Most hardware media players only play music and/or
+video&mdash;they don't provide the media themselves. Those media files
+have to come from a device on the network. GMediaServer is a server for
+such UPnP compatible media players, including:
+
+     <ul>
+<li>NETGEAR Wireless Digital Music Player (MP101)
+
+     <li>Linksys&reg; Wireless-B Music System (WMLS11B)
+
+     <li>Linksys&reg; Wireless-B Media Link for Music (WML11B)
+
+     <li>Philips Streamium SL300i
+
+     <li>Philips Streamium RC9800i
+
+     <li>Omnifi DMS1
+
+     <li>SMC EZ Stream 11Mbps Wireless Audio Adaptor (SMCWAA-B)
+
+     <li>D-Link DSM-520 Wireless HD Media Player
+
+     <li>Roku SoundBridge Network Music Player M1000
+
+     <li>Terratec NOXON 2 audio
+</ul>
+
+  <p>Other UPnP media players (including software based) may work as well&mdash;see
+<a href="Supported-Devices.html#Supported-Devices">Supported Devices</a> for a more complete list.
+
+  <p>The technical details:
+
+  <p>As the name indicates, GMediaServer implements a <i>MediaServer</i> device
+as specified in the corresponding UPnP standard (see <a href="References-and-Links.html#References-and-Links">References and Links</a>). 
+The media players issue browse and search requests to GMediaServer through this
+protocol. The actual audio and video data (e.g. MP3 and OGG files) is however
+transferred using a different protocol. Currently that is HTTP&mdash;GMediaServer
+uses the built in HTTP server of libupnp for this purpose.
+
+  <p>GMediaServer is written in C by Oskar Liljeblad. It should compile and run
+on any modern POSIX compatible system such as GNU/Linux. GMediaServer is a
+console based application which is usually run in the background. It is free
+software, licensed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>.
+
+<!-- ======================================================================= -->
+</body></html>
+
