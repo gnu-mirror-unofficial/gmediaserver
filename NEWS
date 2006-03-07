@@ -1,4 +1,4 @@
-2000-00-00: GMediaServer 0.11.0 released. <- FIXME, not released.
+2006-00-00: GMediaServer 0.11.0 (only in CVS).
   Search fixes:
     Return proper search capabilities (""->"*") (patch from Randy Scott).
     Correct UPnP return value if search criteria wrong (709->708).
@@ -11,6 +11,34 @@
   Lapointe).
   Fix `memory exhausted' error on 64-bit platforms (report and fix from
   Joerg).
+  The GMediaServer device UDN is now generated using libuuid from
+  e2fsprogs (reported by Arthur Taylor).
+  libuuid (from E2fsprogs 1.38+1.39-WIP-2005.12.31) is included in the
+  source code package.
+  Fix configure bug: Compile even without TagLib.
+  Mention compatibility with Terratec Noxon (from Michael Seewald).
+  Add support for identifying Ogg Vorbis audio.
+  Reformat and reorganize documentation. Get rid of trade marks per GNU
+  Coding Standards.
+  Mention that GMediaServer is in Debian.
+  Added support for reading and displaying duration (from TagLib) (patch
+  from Randy Scott).
+  Fix file identification bug (any file would be treated as a m3u play list).
+  Source code has now been imported to CVS on Savannah!
+  Revised character set handling:
+    Tags identified with id3lib are now handled correctly as either
+    ISO 8859-1 or UTF-16 (bug reported by Michael Seewald).
+    Tags identified with TagLib are now properly handled as UTF-8.
+    Load tags with TagLib first, then id3lib. TagLib has a cleaner
+    C interface and seems to be better maintained.
+    Rename --in-charset option to --fs-charset, specifying character
+    set used for local file system only.
+    Tags are stored as UTF-8 internally, and player devices are
+    assumed to handle UTF-8 by default. If not, override with
+    the --device-charset option.
+    Most strings are handled as UTF-8 internally.
+    Character encoding for messages printed to standard out and to log file
+    can be specified with --log-charset.
 
 2006-02-18: GMediaServer 0.10.0 released.
   GMediaServer is now a GNU project.
