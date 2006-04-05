@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+<title>File types - GMediaServer</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GMediaServer">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Usage.html#Usage" title="Usage">
+<link rel="prev" href="Profiles.html#Profiles" title="Profiles">
+<link rel="next" href="Signals.html#Signals" title="Signals">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual was last updated 5 March 2006 for version
+0.10.4 of GMediaServer.
+
+Copyright (C) 2005, 2006 Oskar Liljeblad
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of either:
+
+     a) the GNU General Public License as published by the Free Software
+     Foundation; either version 2 of the License, or (at your option)
+     any later version, or
+
+     b) the GNU Free Documentation License, version 1.2 or any later
+     version published by the Free Software Foundation; with no
+     Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+     A copy of the GNU General Public License is included in the
+     section entitled "GNU General Public License"; a copy of the GNU
+     Free Documentation License is included in the section entitled
+     "GNU Free Documentation License".
+  -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="File-types"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Signals.html#Signals">Signals</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Profiles.html#Profiles">Profiles</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Usage.html#Usage">Usage</a>
+<hr>
+</div>
+
+<h3 class="section">4.4 File types</h3>
+
+<p>The following types can be specified for <samp><span class="option">--file-types</span></samp>:
+
+     <dl>
+<dt><code>mp3</code><dd>The regular MP3 files, or to be more specific
+`<samp><span class="samp">MPEG ADTS, layer III, v1</span></samp>'. At the moment this does
+also include MP3 files beginning with an ID3 tag.
+
+     <br><dt><code>wma</code><dd>`<samp><span class="samp">Windows Media Audio</span></samp>' data encapsulated in Microsoft ASF files.
+
+     <br><dt><code>wav</code><dd>Wave sound data encapsulated in RIFF files.
+
+     <br><dt><code>m4a</code><dd>`<samp><span class="samp">iTunes AAC-LC</span></samp>' data encapsulated in an ISO Media MPEG v4 system file.
+
+     <br><dt><code>ogg</code><dd>`<samp><span class="samp">Vorbis</span></samp>' audio encapsulated in an Ogg file.
+
+     <br><dt><code>pls</code><dd>A playlist format used by Winamp and other programs.
+
+     <br><dt><code>m3u</code><dd>Simple and extended M3U playlists used by Winamp and other programs. 
+Extended M3U playlists start with `<samp><span class="samp">#EXTM3U</span></samp>'.
+
+     <br><dt><code>unknown</code><dd>Unidentified files (all other). Normally these files are not served,
+but when unknown is included in the file types list they will be. 
+</dl>
+
+<!-- ====================================================================================== -->
+</body></html>
+

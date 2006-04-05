@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+<title>Requirements - GMediaServer</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GMediaServer">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Preparations.html#Preparations" title="Preparations">
+<link rel="prev" href="Obtaining-GMediaServer.html#Obtaining-GMediaServer" title="Obtaining GMediaServer">
+<link rel="next" href="Building-and-Installation.html#Building-and-Installation" title="Building and Installation">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual was last updated 5 March 2006 for version
+0.10.4 of GMediaServer.
+
+Copyright (C) 2005, 2006 Oskar Liljeblad
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of either:
+
+     a) the GNU General Public License as published by the Free Software
+     Foundation; either version 2 of the License, or (at your option)
+     any later version, or
+
+     b) the GNU Free Documentation License, version 1.2 or any later
+     version published by the Free Software Foundation; with no
+     Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+     A copy of the GNU General Public License is included in the
+     section entitled "GNU General Public License"; a copy of the GNU
+     Free Documentation License is included in the section entitled
+     "GNU Free Documentation License".
+  -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Requirements"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Building-and-Installation.html#Building-and-Installation">Building and Installation</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Obtaining-GMediaServer.html#Obtaining-GMediaServer">Obtaining GMediaServer</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Preparations.html#Preparations">Preparations</a>
+<hr>
+</div>
+
+<h3 class="section">3.2 Requirements</h3>
+
+<p>GMediaServer is written to work on modern POSIX compatible systems, mainly
+the GNU system. It has been tested on GNU/Linux and FreeBSD.
+
+  <p>The following programs are required to build GMediaServer:
+
+     <ul>
+<li>GNU C Compiler (gcc), 2.95 or later.
+
+     <p>GMediaServer uses some features specific to gcc 2.95,
+such as macros with variable number of arguments. 
+The GNU C Compiler is part of the GNU Compiler Collection
+which can be downloaded from <a href="http://gcc.gnu.org/">http://gcc.gnu.org/</a>. 
+In Debian and many other distributions the package is called <tt>gcc</tt>. 
+</ul>
+
+  <p>The following libraries are required to build and run GMediaServer:
+
+     <ul>
+<li>Linux SDK for UPnP Devices (libupnp), 1.2.1 or later
+
+     <p>The libupnp library is used for communication using the UPnP protocol. libupnp can
+be downloaded from <a href="http://upnp.sourceforge.net/">http://upnp.sourceforge.net/</a>.
+
+     <p>Debian packages for libupnp are available in stable since the <i>Sarge</i>
+release. The runtime package is called <tt>libupnp0</tt>, and the package
+required when building <tt>libupnp-dev</tt>. 
+</ul>
+
+  <p>The following libraries are optional:
+
+     <ul>
+<li>ID3v1/ID3v2 Tagging Library (id3lib), 3.8 or later
+
+     <p>This library allows GMediaServer to retrieve ID3 information from MP3
+files. id3lib can be downloaded from <a href="http://id3lib.sourceforge.net/">http://id3lib.sourceforge.net/</a>.
+
+     <p>The Debian package for id3lib is currently available in stable (<i>Sarge</i>)
+and is called <tt>libid3-3.8.3</tt>. In testing and unstable, the packages is
+<tt>libid3-3.8.3c2a</tt>. <tt>libid3-3.8.3-dev</tt> will be used when building GMediaServer.
+
+     <li>TagLib Audio Meta-Data Library (taglib), 1.4 or later, C bindings
+
+     <p>This library is similar to id3lib in that it retrieves information from
+audio files. TagLib can be downloaded from <a href="http://developer.kde.org/~wheeler/taglib.html">http://developer.kde.org/~wheeler/taglib.html</a>. 
+Note that the C binding are used.
+
+     <p>The Debian package for TagLib is available in stable (Sarge) and is
+called <tt>libtagc0</tt>. <tt>libtagc0-dev</tt> will be used when building GMediaServer.
+
+     <li>libuuid from Ext2 Filesystem Utilities (E2fsprogs), 1.36 or later
+
+     <p>E2fsprogs includes libuuid, which GMediaServer uses to generate universally unique
+ids (UUIDs). A UUID is generated every time GMediaServer is started and will be used
+by other devices to refer to the media server. libuuid is not required - if not
+detected by the configure script, it will be built from code included in the
+GMediaServer source code package (subdirectory <samp><span class="file">uuid</span></samp>). E2fsprogs can be
+downloaded from <a href="http://e2fsprogs.sourceforge.net/">http://e2fsprogs.sourceforge.net/</a>.
+
+     <p>The Debian package for libuuid is available in stable (Sarge) and is called <tt>libuuid1</tt>. 
+<tt>uuid-dev</tt> will be used when building GMediaServer.
+
+  </ul>
+
+  </body></html>
+

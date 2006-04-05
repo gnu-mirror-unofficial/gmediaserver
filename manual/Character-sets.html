@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+<title>Character sets - GMediaServer</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GMediaServer">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Usage.html#Usage" title="Usage">
+<link rel="prev" href="Signals.html#Signals" title="Signals">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual was last updated 5 March 2006 for version
+0.10.4 of GMediaServer.
+
+Copyright (C) 2005, 2006 Oskar Liljeblad
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of either:
+
+     a) the GNU General Public License as published by the Free Software
+     Foundation; either version 2 of the License, or (at your option)
+     any later version, or
+
+     b) the GNU Free Documentation License, version 1.2 or any later
+     version published by the Free Software Foundation; with no
+     Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+     A copy of the GNU General Public License is included in the
+     section entitled "GNU General Public License"; a copy of the GNU
+     Free Documentation License is included in the section entitled
+     "GNU Free Documentation License".
+  -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Character-sets"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Signals.html#Signals">Signals</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Usage.html#Usage">Usage</a>
+<hr>
+</div>
+
+<h3 class="section">4.2 Character sets and encodings in tags</h3>
+
+<p>This section attempts to describe some intricacies regarding character
+sets and encodings in tags.
+
+  <p>Text in ID3v2 tags can be encoded in a variety of ways. 
+ID3v2.3 and earlier standards support only text encoded in ISO 8859-1 and UCS-2. 
+ID3v2.4 added support for UTF-8 and UTF-16BE<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>, and replaced UCS-2 with UTF-16.
+
+  <p>If you are using id3lib, only ISO 8859-1 and UCS-2/UTF-16 encodings of ID3v2.4 tags
+are supported. The current C API of id3lib must be extended in order to
+support UTF-8 and UTF-16BE for ID3v2.4. (Especially, a function
+ID3Field_GetEncoding is missing.)
+
+  <p>TagLib seems to support all encodings used in ID3v2.4 tags.
+
+  <p>Unfortunately, many applications still put UTF-8 encoded text in ID3v2.3 and earlier
+tags. This is incorrect according to the standard<a rel="footnote" href="#fn-2" name="fnd-2"><sup>2</sup></a> -
+single-byte text should be encoded in ISO 8859-1 and nothing else. TagLib handles
+all single-byte text in ID3v1 and ID3v2.3 tags as ISO 8859-1, while id3lib gives
+you the option to treat the data as you like. At the moment, GMediaServer assumes
+single-byte text is encoded in ISO 8859-1 when using id3lib.
+
+<!-- ====================================================================================== -->
+<div class="footnote">
+<hr>
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> The difference between UTF-16,
+UTF-16BE and UTF-16LE is that strings encoded with UTF-16 must start with a byte
+order mark, a so called BOM. For UTF-16 the BOM is either 0xFF 0xFE (denoting
+little endian) or 0xFE 0xFF (denoting big endian).</p>
+
+  <p class="footnote"><small>[<a name="fn-2" href="#fnd-2">2</a>]</small> <a href="http://www.id3.org/id3v2.3.0.html">ID3v2.3.0 Informal standard</a>.</p>
+
+  <p><hr></div>
+
+  </body></html>
+
