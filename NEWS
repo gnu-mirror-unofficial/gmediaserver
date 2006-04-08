@@ -1,3 +1,6 @@
+CVS
+  Fix compilation problems by including some headers (from Jan Ceuleers).
+
 2006-04-08: GMediaServer 0.11.0 released.
   Search fixes:
     Return proper search capabilities (""->"*") (patch from Randy Scott).
