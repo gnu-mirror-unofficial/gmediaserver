@@ -1,8 +1,13 @@
-2006-00-00: GMediaServer 0.11.0 (only in CVS).
+2006-04-08: GMediaServer 0.11.0 released.
   Search fixes:
     Return proper search capabilities (""->"*") (patch from Randy Scott).
     Correct UPnP return value if search criteria wrong (709->708).
     Memory leak: Free search criteria memory after Search (Randy Scott).
+  New supported devices:
+    Pinnacle ShowCenter 200 (from Michael Seewald).
+    Philips Streamium SLA5520 (from Bart Küpers).
+  Check for libupnp using pkg-config first (supported by libupnp 1.3.0
+  and later).
   Implement sorting for Browse and Search actions (Randy Scott).
   Support track numbers in output (patch from Randy Scott).
   Improve and add more output during scanning phase.
@@ -23,8 +28,20 @@
   Mention that GMediaServer is in Debian.
   Added support for reading and displaying duration (from TagLib) (patch
   from Randy Scott).
-  Fix file identification bug (any file would be treated as a m3u play list).
-  Source code has now been imported to CVS on Savannah!
+  Detect recursive file scanning (playlists and directories) by
+  remembering and comparing inode values.
+  The complete manual is now on the web (missing files reported by
+  Matthew Underwood).
+  Improve playlist handling:
+    Fix file identification bug (any file would be treated as a m3u play
+    list).
+    Source code has now been imported to CVS on Savannah!
+    Convert backslash to slash in file names.
+    Check file names before continuing scan (deny absolute paths or parent
+    paths). Note that symlinks can still be used to allow scanning outside
+    the given directories.
+    Warn about and ignore empty lines in playlists (would cause endless
+    loop).
   Revised character set handling:
     Tags identified with id3lib are now handled correctly as either
     ISO 8859-1 or UTF-16 (bug reported by Michael Seewald).
@@ -37,8 +54,8 @@
     assumed to handle UTF-8 by default. If not, override with
     the --device-charset option.
     Most strings are handled as UTF-8 internally.
-    Character encoding for messages printed to standard out and to log file
-    can be specified with --log-charset.
+    Character encoding for messages printed to standard out and to log
+    file can be specified with --log-charset.
 
 2006-02-18: GMediaServer 0.10.0 released.
   GMediaServer is now a GNU project.
