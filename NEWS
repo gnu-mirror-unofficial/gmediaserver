@@ -1,5 +1,22 @@
-CVS
-  Fix compilation problems by including some headers (from Jan Ceuleers).
+2006-09-01: GMediaServer 0.12.0 released.
+  Fix compilation problems by including more headers in various places
+  (from Jan Ceuleers, Sebastian Marek, Mohan Yellaji, and
+  Alejandro Imass).
+  Support libupnp 1.3.x properly by using headers in correct directory
+  (from Jan Ceuleers).
+  Added initial support for file types other than audio. Add support
+  for JPEG images (patch from Jan Ceuleers).
+  Use and depend on libmagic for file type identification.
+  Add --file-types help to --help message.
+  Fix libuuid detection (reported by Wayne Stallwood).
+  Enable searching by adding 'searchable' attribute to containers (reported
+  by Rémi).
+  Minor documentation improvements.
+  Fix bug: GMediaServer would segfault when more than one directory was
+  specified on the command line and one (or more) of them could not be
+  scanned.
+  Fix bugs: GMediaServer would segfault on any search.
+  Output non-printable strings escaped properly.
 
 2006-04-08: GMediaServer 0.11.0 released.
   Search fixes:
