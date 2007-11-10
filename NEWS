@@ -1,3 +1,22 @@
+2007-11-10: GMediaServer 0.13.0 released.
+  This project is looking for a new maintainer!
+    Unfortunately I have found it more and more difficult to find time and
+    motivation to continue working on this project. If anyone is interesting
+    taking over development and support for GMediaServer on Savannah, please
+    let me know!
+  Link libmagic with zlib optionally.
+  Link libupnp with pthread optionally - fix for FreeBSD (bug reported by
+  Olaf).
+  Fix bug in parsing of sort criterias (reported by Canola maintainer
+  Gustavo Sverzut Barbieri).
+  Change license to GPLv3.
+  Minor manual updates.
+  Added some supported devices.
+  Added Playstation 3 support (patch from FUKAUMI Naoki, thanks!).
+  Added preliminary DLNA support.
+  Enable large file support in GMediaServer, fixing some weird problems.
+  GMediaServer will now work with libupnp 1.6.1.
+
 2006-09-01: GMediaServer 0.12.0 released.
   Fix compilation problems by including more headers in various places
   (from Jan Ceuleers, Sebastian Marek, Mohan Yellaji, and

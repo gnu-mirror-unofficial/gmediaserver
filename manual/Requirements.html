@@ -10,8 +10,8 @@
 <link rel="next" href="Building-and-Installation.html#Building-and-Installation" title="Building and Installation">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <!--
-This manual was last updated 31 August 2006 for version
-0.12.0 of GMediaServer.
+This manual was last updated 10 November 2007 for version
+0.13.0 of GMediaServer.
 
 Copyright (C) 2005, 2006 Oskar Liljeblad
 
@@ -19,7 +19,7 @@ Copyright (C) 2005, 2006 Oskar Liljeblad
      document under the terms of either:
 
      a) the GNU General Public License as published by the Free Software
-     Foundation; either version 2 of the License, or (at your option)
+     Foundation; either version 3 of the License, or (at your option)
      any later version, or
 
      b) the GNU Free Documentation License, version 1.2 or any later
@@ -68,20 +68,24 @@ the GNU system. It has been tested on GNU/Linux and FreeBSD.
 such as macros with variable number of arguments. 
 The GNU C Compiler is part of the GNU Compiler Collection
 which can be downloaded from <a href="http://gcc.gnu.org/">http://gcc.gnu.org/</a>. 
-In Debian and many other distributions the package is called <tt>gcc</tt>. 
-</ul>
+In Debian and many other distributions the package is called <tt>gcc</tt>.
+
+  </ul>
 
   <p>The following libraries are required to build and run GMediaServer:
 
      <ul>
-<li>Linux SDK for UPnP Devices (libupnp), 1.2.1 or later
+<li>Linux SDK for UPnP Devices (libupnp), 1.2.1 or later, or
+
+     <p>Portable SDK for UPnP Devices (libupnp 1.6.0), 1.6.0 or later
 
      <p>The libupnp library is used for communication using the UPnP protocol. libupnp can
-be downloaded from <a href="http://upnp.sourceforge.net/">http://upnp.sourceforge.net/</a>.
+be downloaded from <a href="http://upnp.sourceforge.net/">http://upnp.sourceforge.net/</a>. libupnp 1.6.0 and later can
+be downloaded from <a href="http://pupnp.sourceforge.net/">http://pupnp.sourceforge.net/</a>.
 
      <p>Debian packages for libupnp are available in stable since the <i>Sarge</i>
-release. The runtime package is called <tt>libupnp0</tt>, and the package
-required when building <tt>libupnp-dev</tt>.
+release. The runtime package is called <tt>libupnp0</tt> (or <tt>libupnp2</tt>),
+and the package required when building is <tt>libupnp-dev</tt>.
 
      <li>libmagic from file ("The Fine Free File Command"), 4.02 or later
 
@@ -128,6 +132,10 @@ downloaded from <a href="http://e2fsprogs.sourceforge.net/">http://e2fsprogs.sou
 <tt>uuid-dev</tt> will be used when building GMediaServer.
 
   </ul>
+
+  <p>A number of programs are required to build GMediaServer using
+code from CVS only. Please see the <samp><span class="file">DEPENDENCIES</span></samp> file from Gnulib
+for a complete list of dependencies.
 
   </body></html>
 
